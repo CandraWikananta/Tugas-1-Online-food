@@ -14,7 +14,7 @@ public class main {
         while(!isLoggedIn){
             systemCLS.clearScreen();
             System.out.println("Selamat datang di Pemesanan makanan online!");
-            System.out.println("----------------------------------------");
+            System.out.println("-------------------------------------------------");
             System.out.println("Silahkan Login terlebih dahulu.");
             System.out.print("Username : ");
             String username = scan.nextLine();
@@ -28,21 +28,25 @@ public class main {
                 systemCLS.clearScreen();
             }
             else if (username.equals(usernameCustomer) && password.equals(passwordCustomer)){
-                System.out.println("Berhasil Login sebagai Customer!");
+                System.out.println("-------------------------------------------------");
+                System.out.println("     * * Berhasil Login sebagai Customer! * *");
+                System.out.println("-------------------------------------------------");
                 isLoggedIn = true;
                 waitForInput(scan);
                 systemCLS.clearScreen();
+                customer.menuCustomer();
             }
             else{
                 System.out.println("Username dan Password salah, silahkan Login ulang!");
                 waitForInput(scan);
                 systemCLS.clearScreen();
+                
             }
         }
     }
 
     public static void waitForInput(Scanner scan){
-        System.out.println("Tekan tombol apapun untuk lanjut");
+        System.out.println("Tekan tombol ENTER untuk lanjut");
         scan.nextLine();
     }
 }
