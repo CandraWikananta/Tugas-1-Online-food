@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 
 public class Restoran {
-    String namaResto;
+    static String namaResto;
     String alamat;
-    private ArrayList<ArrayList<String>> makanan = new ArrayList<>();
+    private static ArrayList<ArrayList<String>> makanan = new ArrayList<>();
     private ArrayList<ArrayList<String>> minuman = new ArrayList<>();
-    
 
     static int id = 1;
 
@@ -32,16 +31,28 @@ public class Restoran {
     }
 
     public void addMakanan(String namaMakanan, String hargaMakanan) {
-        ArrayList<String> makanan = new ArrayList<String>();
-        makanan.add(namaMakanan);
-        makanan.add(hargaMakanan);
-
+        ArrayList<String> makananItem = new ArrayList<String>();
+        makananItem.add(namaMakanan);
+        makananItem.add(hargaMakanan);
+        makanan.add(makananItem);
     }
 
     public void addMinuman(String namaMinuman, String hargaMinuman) {
-        ArrayList<String> minuman = new ArrayList<String>();
-        minuman.add(namaMinuman);
-        minuman.add(hargaMinuman);
+        ArrayList<String> minumanItem = new ArrayList<String>();
+        minumanItem.add(namaMinuman);
+        minumanItem.add(hargaMinuman);
+        minuman.add(minumanItem);
+    }
 
+    public static void printMakanan() {
+        System.out.println("Daftar Makanan di " + namaResto + ":");
+
+        // Loop melalui setiap ArrayList dalam makanan
+        for (ArrayList<String> item : makanan) {
+            // Loop melalui setiap item dalam ArrayList tersebut
+            for (String makananItem : item) {
+                System.out.println("Nama: " + makananItem);
+            }
+        }
     }
 }
