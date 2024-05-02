@@ -30,6 +30,8 @@ I Nyoman Gede Candra Wikananta - 2305551065
 
 Diagram UML adalah cara untuk memvisualisasikan sistem dan perangkat lunak menggunakan Unified Modeling Language (UML). Diagram UML digunakan untuk memahami desain, arsitektur kode, dan usulan implementasi sistem perangkat lunak yang kompleks. Berikut adalah diagram UML dari program yang telah kami buat
 
+![UML](/gambar/UMLRestoOnline.jpg)
+
 ## Batasan Program
 
 Adapun batasan program yang sudah kami buat, antara lain :
@@ -129,6 +131,54 @@ Jika user memilih untuk mengonfirmasi penghapusan, maka restoran tersebut akan t
 Jika user memilih menu 'kembali ke login', maka akan tampil pesan seperti gambar di atas. Selelah pengguna menekan enter, maka user akan kembali ke menu login.
 
 ### Customer
+
+1. **Login Customer**
+
+Untuk Log in ke dalam menu customer, kita harus memasukkan username "customer" dan password "customer" di halaman log in terlebih dahulu.
+
+![LoginCustomer](/gambar/LoginCustomer.png "Login sebagai Customer")
+
+2. **Halaman Utama Customer**
+
+Setelah melakukan login dengan username dan password yang sesuai, maka pengguna akan diarahakan ke menu customer. Berikut adalah tampilan awal menu admin
+
+![menu customer](/gambar/menuCustomer.png "Menu Utama Customer")
+
+3. **Lihat Restoran**
+
+![Lihat Restoran](/gambar/lihatRestoranCust.png "Lihat Restoran")
+
+Jika pengguna memilih menu lihat restoran, maka tampilan menu pertama adalah list restoran yang sudah ditambahkan sebelumnya. Selanjutnya pengguna akan memilih ID restoran berapa yang ingin ditampilkan menunya.
+
+![Lihat Menu Resto](/gambar/menuRestoranCust.png "Menu Restoran")
+
+Setelah pengguna memilih ID Restoran, maka akan tampil list menu yang telah ditambahkan sebelumnya seperti pada contoh gambar di atas. Setelah selesai melihat, pengguna hanya cukup menekan enter untuk kembali ke halaman utama admin.
+
+4. **Melakukan Pesanan**
+
+Jika pengguna memilih untuk melakukan pesanan, maka akan ditampilkan menu daftar restoran terlebih dahulu, kemudian pengguna dapat memilih dari restoran mana yang mau dipesan.
+
+![Daftar Restoran](/gambar/daftarRestoranCust.png "Daftar Restoran")
+
+Setelah pengguna memilih restoran, akan ditampilkan list menu yang ada di dalam restoran tersebut seperti gambar di bawah ini.
+
+![Menu Resto](/gambar/melakukanPesanan.png "Melakukan Pesanan")
+
+Kemudian pengguna dapat memilih diantara makanan/minuman yang mau dipesan. lalu pengguna harus memasukkan nomor makanan/minuman yang mau dipesan dan jumlah nya berapa.
+
+![Pesanan](/gambar/melakukanPesanan2.png "Menambah Pesanan")
+
+Setelah itu pengguna akan ditanyakan jika ingin melakukan pesanan lagi atau tidak, jika iya pengguna akan diminta untuk memilih nomor makanan/minuman lagi dan jumlahnya. Jika tidak maka akan ditanyakan jarak rumah dari Resto dan akan dihitung harga ongkir serta total harga pesanan.
+
+![Selesai Pesanan](/gambar/selesaiPesanan.png "Selesai Pesanan")
+
+Pengguna cukup untuk menekankan tombol enter untuk lanjut setelah selesai melakukan pesanan.
+
+5. **Riwayat Pesanan**
+
+Ketika pengguna sudah selesai melakukan pemesanan, kita bisa melihat riwayat pemesanan yang telah pengguna lakukan. Berikut adalah tampilan menu dari riwayat pemesanan.
+
+![Riwayat Pesanan](/gambar/riwayatPesanan.png "Riwayat Pesanan")
 
 ## Penutup
 
