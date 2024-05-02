@@ -55,6 +55,31 @@ public class admin {
     }
 
     private static void lihatRestoran() {
+        if (restaurant.size() == 0) {
+            System.out.println("Tidak ada restoran.");
+            adminMenu();
+            return; // Menghentikan eksekusi metode setelah menampilkan pesan
+        }
+
+        int id = 1;
+        for (int i = 0; i < restaurant.size(); i++) {
+            Restoran restoran = restaurant.get(i);
+            System.out.printf("%d. %s - %s\n", i + 1, restoran.getNamaResto(), restoran.getAlamat());
+            id++;
+        }
+
+        int idResto = 0;
+        System.out.println("masukkan id resto : ");
+        idResto = scanner.nextInt();
+
+        ArrayList<ArrayList<String>> makanan = new ArrayList<>();
+        ArrayList<ArrayList<String>> minuman = new ArrayList<>();
+
+        makanan = restaurant.get(idResto - 1).getMakanan();
+        minuman = restaurant.get(idResto - 1).getMinuman();
+
+        System.out.printf("%s, %s", restaurant.get(idResto - 1).getNamaResto(),
+                restaurant.get(idResto - 1).getAlamat());
 
     }
 
@@ -106,10 +131,9 @@ public class admin {
 
         } while (konfirm != 0);
 
-        tambahResto(restoran); // Tambahkan objek Restoran baru ke ArrayList restaurant
+        tambahResto(restoran);
         System.out.println("data berhasil ditambahkan");
-        restoran.printMakanan();
-        adminMenu(); // Kembali ke menu admin setelah menambah data
+        adminMenu();
     }
 
     private static void hapusRestoran() {
