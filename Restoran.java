@@ -1,12 +1,10 @@
 import java.util.ArrayList;
 
 public class Restoran {
-    static String namaResto;
-    String alamat;
-    private static ArrayList<ArrayList<String>> makanan = new ArrayList<>();
-    private static ArrayList<ArrayList<String>> minuman = new ArrayList<>();
-
-    static int id = 1;
+    private String namaResto; // Ubah menjadi variabel non-statis
+    private String alamat;
+    private ArrayList<ArrayList<String>> makanan = new ArrayList<>();
+    private ArrayList<ArrayList<String>> minuman = new ArrayList<>();
 
     // constructor untuk tambah restoran
     public Restoran(String namaResto, String alamat) {
@@ -43,5 +41,4 @@ public class Restoran {
         minumanItem.add(hargaMinuman);
         minuman.add(minumanItem);
     }
-
 }
