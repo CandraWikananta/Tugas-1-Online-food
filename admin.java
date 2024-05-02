@@ -62,42 +62,44 @@ public class admin {
         }
 
         int id = 1;
-        for (int i = 0; i < restaurant.size(); i++) {
-            Restoran restoran = restaurant.get(i);
-            System.out.printf("%d. %s - %s\n", id++, restoran.getNamaResto(), restoran.getAlamat());
+        for (Restoran restoran : restaurant) {
+            System.out.printf("%d. %s-%s\n", id, restoran.getNamaResto(), restoran.getAlamat());
+            id++;
         }
 
-        System.out.println("Masukkan id resto : ");
+        System.out.println("Masukkan ID restoran : ");
         int idResto = scanner.nextInt();
         scanner.nextLine(); // Membersihkan newline dari buffer
 
         if (idResto < 1 || idResto > restaurant.size()) {
-            System.out.println("Id resto tidak valid.");
+            System.out.println("ID restoran tidak valid.");
             return;
         }
 
-        System.out.printf("%s - %s\n", restaurant.get(idResto - 1).getNamaResto(),
-                restaurant.get(idResto - 1).getAlamat());
-        System.out.println("Menu makanan:");
+        Restoran restoranPilihan = restaurant.get(idResto - 1);
 
-        ArrayList<ArrayList<String>> makanan = restaurant.get(idResto - 1).getMakanan();
+        System.out.printf("%s - %s\n", restoranPilihan.getNamaResto(), restoranPilihan.getAlamat());
+        System.out.println("Menu Makanan:");
+
+        ArrayList<ArrayList<String>> makanan = restoranPilihan.getMakanan();
         if (makanan.size() == 0) {
             System.out.println("Tidak ada makanan.");
         } else {
-            int idMakanan = 1;
-            for (ArrayList<String> food : makanan) {
-                System.out.printf("%d. %s\t\tRp. %s\n", idMakanan++, food.get(0), food.get(1));
+            for (int i = 0; i < makanan.size(); i++) {
+                ArrayList<String> food = makanan.get(i);
+                System.out.printf("%d. %s - Rp. %s\n", i + 1, food.get(0), food.get(1));
             }
         }
 
-        System.out.println("Menu minuman:");
-        ArrayList<ArrayList<String>> minuman = restaurant.get(idResto - 1).getMinuman();
+        System.out.println("Menu Minuman:");
+
+        ArrayList<ArrayList<String>> minuman = restoranPilihan.getMinuman();
         if (minuman.size() == 0) {
             System.out.println("Tidak ada minuman.");
         } else {
-            int idMinuman = 1;
-            for (ArrayList<String> drink : minuman) {
-                System.out.printf("%d. %s\t\tRp. %s\n", idMinuman++, drink.get(0), drink.get(1));
+            for (int i = 0; i < minuman.size(); i++) {
+                ArrayList<String> drink = minuman.get(i);
+                System.out.printf("%d. %s - Rp. %s\n", i + 1, drink.get(0), drink.get(1));
             }
         }
         adminMenu();
