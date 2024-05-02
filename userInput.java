@@ -28,6 +28,7 @@ public class userInput {
         String input;
         while (true) {
             input = scan.next();
+            scan.nextLine();
             if (input == null && input.length() == 0) {
                 System.out.println("Input salah, silahkan masukkan kembali");
             } else {
