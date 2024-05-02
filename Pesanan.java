@@ -10,13 +10,13 @@ public class Pesanan {
 
     // Konstruktor
     public Pesanan(int idRestoran, ArrayList<ItemPesanan> makananPesanan, ArrayList<ItemPesanan> minumanPesanan, int jarak, int totalHarga, ArrayList<Restoran> daftarRestoran) {
-        this.idRestoran = idRestoran;
-        this.makananPesanan = makananPesanan;
-        this.minumanPesanan = minumanPesanan;
-        this.jarak = jarak;
-        this.totalHarga = totalHarga;
-        this.daftarRestoran = daftarRestoran;
-    }
+    this.idRestoran = idRestoran;
+    this.makananPesanan = makananPesanan;
+    this.minumanPesanan = minumanPesanan;
+    this.jarak = jarak;
+    this.totalHarga = totalHarga;
+    this.daftarRestoran = daftarRestoran;
+}
 
     public ArrayList<Restoran> getDaftarRestoran() {
         return daftarRestoran;

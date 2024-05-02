@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class App {
     public static void main(String[] args) {
 
@@ -22,7 +20,6 @@ public class App {
     }
 
     public static void logIn(){
-        Scanner scan = new Scanner(System.in);
         boolean isLoggedIn = false;
         while (!isLoggedIn) {
             clearScreen();
@@ -32,15 +29,15 @@ public class App {
             System.out.println("\nSilahkan Login terlebih dahulu.");
             System.out.println("-------------------------------------------------");
             System.out.print("Username : ");
-            String username = scan.nextLine();
+            String username = userInput.getString();
             System.out.print("Password : ");
-            String password = scan.nextLine();
+            String password = userInput.getString();
 
             if (username.equals(admin.usernameAdmin) && password.equals(admin.passwordAdmin)) {
                 System.out.println("-------------------------------------------------");
                 System.out.println("      * * Berhasil Login sebagai Admin! * *      ");
                 System.out.println("-------------------------------------------------");                isLoggedIn = true;
-                waitForInput(scan);
+                userInput.hold();
                 clearScreen();
                 admin.adminMenu();
             } else if (username.equals(customer.usernameCustomer) && password.equals(customer.passwordCustomer)) {
@@ -48,20 +45,15 @@ public class App {
                 System.out.println("     * * Berhasil Login sebagai Customer! * *");
                 System.out.println("-------------------------------------------------");
                 isLoggedIn = true;
-                waitForInput(scan);
+                userInput.hold();
                 clearScreen();
                 customer.menuCustomer();
             } else {
                 System.out.println("Username dan Password salah, silahkan Login ulang!");
-                waitForInput(scan);
+                userInput.hold();
                 clearScreen();
             }
         }
-    }
-
-    public static void waitForInput(Scanner scan) {
-        System.out.println("Tekan tombol ENTER untuk lanjut");
-        scan.nextLine();
     }
 
     public static void clearScreen() {

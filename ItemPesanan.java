@@ -1,5 +1,5 @@
 public class ItemPesanan {
-    private int idMenu;
+
     private String nama;
     private int harga;
     private int jumlah;
@@ -10,15 +10,6 @@ public class ItemPesanan {
         this.nama = nama;
         this.harga = harga;
         this.jumlah = jumlah;
-    }
-
-    // Getter dan Setter
-    public int getIdMenu() {
-        return idMenu;
-    }
-
-    public void setIdMenu(int idMenu) {
-        this.idMenu = idMenu;
     }
 
     public String getNama() {
