@@ -6,13 +6,17 @@ Di bawah ini adalah deskripsi program, penjelasan dari bagaimana program akan di
 
 ## Daftar Isi
 
-- [Tugas 1](#tugas-1-mata-kuliah-pemrograman-basis-objek---program-membeli-makanan-online-berbasis-command-line\)
+- [Tugas 1](#tugas-1-mata-kuliah-pemrograman-basis-objek---program-membeli-makanan-online-berbasis-command-line)
   - [Daftar Isi](#daftar-isi)
   - [Creator](#creator)
   - [UML](#desain-uml)
   - [Batasan](#batasan-program)
   - [Aplikasi Yang DIgunakan](#aplikasi-yang-digunakan)
+    - [VSCode](#visual-studio-code) -[Java Extension Pack](#extension-pack-for-java)
   - [Alur](#alur-program)
+    - [Login](#login)
+    - [Admin](#admin)
+    - [Customer](#customer)
   - [Penutup](#penutup)
 
 ## Creator
@@ -66,7 +70,7 @@ Penggunaan program diawali dengan login pengguna. Terdapat dua jenis penggguna y
 
 Jika pengguna memasukkan username dan password yang benar, maka pengguna akan diarahkan ke salah satu tipe user pada aplikasi ini.
 
-## Admin
+### Admin
 
 1. **Menu Utama**
 
@@ -121,6 +125,8 @@ Jika user memilih untuk mengonfirmasi penghapusan, maka restoran tersebut akan t
 ![kembaliKeLogin](/gambar/kembaliKeLogin.jpg "Kembali ke login")
 
 Jika user memilih menu 'kembali ke login', maka akan tampil pesan seperti gambar di atas. Selelah pengguna menekan enter, maka user akan kembali ke menu login.
+
+### Customer
 
 ## Penutup
 
