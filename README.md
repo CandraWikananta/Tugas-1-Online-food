@@ -42,7 +42,9 @@ Adapun alur dari program yang telah kami buat sebagai berikut :
 ### Login
 
 ![login](/gambar/login.jpg "login")
+
 Penggunaan program diawali dengan login pengguna. Terdapat dua jenis penggguna yaitu customer dan admin .Pengguna dapat login ke dalam program ini dengan username dan password yang telah kami set di dalam program ini. Berikut adalah username dan passowrd untuk masing - masing pengguna.
+
 **Customer**
 `Username   : customer`
 `Password   : customer`
@@ -52,7 +54,15 @@ Penggunaan program diawali dengan login pengguna. Terdapat dua jenis penggguna y
 `Password   : admin`
 
 ![loginSuccess](/gambar/loginSuccess.jpg "loginSuccess")
+
 Jika pengguna memasukkan username dan password yang benar, maka pengguna akan diarahkan ke salah satu tipe user pada aplikasi ini.
+
+## Admin
+
+1. **Menu Utama**
+   Setelah melakukan login dengan username dan password yang sesuai, maka pengguna akan diarahakan ke menu admin. Berikut adalah tampilan awal menu admin
+
+![Menu utama](/gambar/menuUtamaAdm.jpg "Menu utama")
 
 ## Penutup
 
