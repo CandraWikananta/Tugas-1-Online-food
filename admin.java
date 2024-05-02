@@ -179,6 +179,22 @@ public class admin {
             id++;
         }
 
+        System.out.println("pilih yg mau di hapus");
+        int hapus = scanner.nextInt();
+
+        System.out.printf("hapus : %s - %s",
+                getRestaurants().get(hapus - 1).getNamaResto(),
+                getRestaurants().get(hapus - 1).getAlamat());
+        System.out.println("1 conf, 0 balik");
+        int konfirm = scanner.nextInt();
+        if (konfirm == 1) {
+            hapusResto(hapus - 1);
+            System.out.println("sudha terhapus");
+            adminMenu();
+        } else {
+            adminMenu();
+        }
+
     }
 
 }
