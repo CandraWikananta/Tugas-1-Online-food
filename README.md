@@ -61,7 +61,7 @@ Jika pengguna memasukkan username dan password yang benar, maka pengguna akan di
 
 1. **Menu Utama**
 
-   Setelah melakukan login dengan username dan password yang sesuai, maka pengguna akan diarahakan ke menu admin. Berikut adalah tampilan awal menu admin
+Setelah melakukan login dengan username dan password yang sesuai, maka pengguna akan diarahakan ke menu admin. Berikut adalah tampilan awal menu admin
 
 ![Menu utama](/gambar/menuUtamaAdm.jpg "Menu utama")
 
@@ -69,17 +69,17 @@ Jika pengguna memasukkan username dan password yang benar, maka pengguna akan di
 
 ![Lihat restoran](/gambar/lihatRestoOp.jpg "Lihat restoran")
 
-    Jika pengguna memilih menu lihat restoran, maka tampilan menu pertama adalah list restoran yang sudah ditambahkan sebelumnya. Selanjutnya pengguna akan memilih ID restoran berapa yang ingin ditampilkan menunya.
+Jika pengguna memilih menu lihat restoran, maka tampilan menu pertama adalah list restoran yang sudah ditambahkan sebelumnya. Selanjutnya pengguna akan memilih ID restoran berapa yang ingin ditampilkan menunya.
 
 ![List Menu](/gambar/lihatRestoAftInput.jpg "List menu")
 
-    Setelah pengguna memilih ID Restoran, maka akan tampil list menu yang telah ditambahkan sebelumnya seperti pada contoh gambar di atas. Setelah selesai melihat, pengguna hanya cukup menekan enter untuk kembali ke halaman utama admin.
+Setelah pengguna memilih ID Restoran, maka akan tampil list menu yang telah ditambahkan sebelumnya seperti pada contoh gambar di atas. Setelah selesai melihat, pengguna hanya cukup menekan enter untuk kembali ke halaman utama admin.
 
 3. **Tambah Restoran**
 
 ![Tambah menu](/gambar/tambahRRestoOp.jpg "Tambah menu")
 
-Jika pengguna memilih menu tambah restoran, maka tampilan menu pertama adalah pengguna diminta untuk memasukkan nama restoran dan alamat restoran yang ingin dibuat. 
+Jika pengguna memilih menu tambah restoran, maka tampilan menu pertama adalah pengguna diminta untuk memasukkan nama restoran dan alamat restoran yang ingin dibuat.
 
 ![TambahF-D](/gambar/tambahMenu.jpg "TambahF-D")
 
@@ -92,6 +92,20 @@ Setelah memilih ingin menambah menu makanan atau minuman, user akan diminta untu
 ![selesaiTambahResto](/gambar/tambahRestoDone.jpg "Selesai tambah resto")
 
 Jika user sudah tidak mau menambahkan menu, maka data restoran akan disimpan berserta data menu yang telah dimasukkan.
+
+3. **Hapus Restoran**
+
+![hapusResto](/gambar/hapusRestoOp.jpg "Hapus resto")
+
+Jika pengguna memilih menu hapus restoran, maka tampilan menu pertama adalah list restoran yang sudah ditambahkan sebelumnya seperti gambar di atas. Selanjutnya pengguna akan memilih ID restoran berapa yang akan dihapus.
+
+![konfirmHapusResto](/gambar/hapusRestokonfirm.jpg "Konfirmasi hapus resto")
+
+Setelah memilih ID Resto berapa yang akan dihaps, akan tampil data restoran beserta pesan konfirmasi penghapusan. Jika kita melakukan penghapusan maka semua data restoran dengan ID Restoran yang kita pilih akan hilang datanya.
+
+![selesaiHapusResto](/gambar/hapusRestoDone.jpg "Selesai hapus resto")
+
+Jika user memilih untuk mengonfirmasi penghapusan, maka restoran tersebut akan terhapus. Sedangkan jika user memilih batal, maka tampilan akan kembali ke menu awal admin.
 
 ## Penutup
 
