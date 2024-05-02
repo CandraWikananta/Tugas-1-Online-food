@@ -3,9 +3,8 @@ import java.util.*;
 public class admin {
     public static String usernameAdmin = "admin";
     public static String passwordAdmin = "admin";
-    
-    public static Scanner scanner = new Scanner(System.in);
 
+    public static Scanner scanner = new Scanner(System.in);
 
     public static ArrayList<Restoran> restaurant = new ArrayList<>();
 
@@ -80,6 +79,9 @@ public class admin {
 
         if (idResto < 1 || idResto > restaurant.size()) {
             System.out.println("ID restoran tidak valid.");
+            userInput.hold();
+            App.clearScreen();
+            adminMenu();
             return;
         }
         App.clearScreen();
