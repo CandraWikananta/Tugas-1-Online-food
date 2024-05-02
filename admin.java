@@ -4,18 +4,6 @@ public class admin {
     public static Scanner scanner = new Scanner(System.in);
     private static ArrayList<Restoran> restaurant = new ArrayList<>();
 
-    public static String getString() {
-        String text;
-        while (true) {
-            text = scanner.nextLine();
-            if (text != null && text.length() != 0) {
-                break;
-            } else {
-                System.out.print("Input invalid. Mohon ulangi.\n> ");
-            }
-        }
-        return text;
-    }
 
     public static void tambahResto(Restoran restaurants) {
         restaurant.add(restaurants);
@@ -118,7 +106,7 @@ public class admin {
         int pilihan = 0;
         int konfirm = 0;
         System.out.println("MASUKKAN NAMA RESTORAN : ");
-        String namaResto = getString();
+        String namaResto = userInput.getString();
 
         System.out.println("MASUKKAN ALAMAT RESTORAN : ");
         String alamat = scanner.nextLine();
