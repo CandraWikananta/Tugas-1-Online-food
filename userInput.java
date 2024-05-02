@@ -53,4 +53,11 @@ public class userInput {
         }
     }
 
+    public static void hold() {
+        System.out.println("");
+        System.out.println("Tekan apapun untuk melanjutkan");
+        System.out.println(" >");
+        scan.nextLine();
+    }
+
 }
