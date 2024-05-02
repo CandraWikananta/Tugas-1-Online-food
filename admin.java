@@ -27,7 +27,6 @@ public class admin {
                         "||4. Kembali ke login             ||\n" +
                         "[]================================[]\n");
         System.out.println("Masukkan pilihan : ");
-        System.out.print("> ");
         int pilihanMenu = userInput.getInteger(1, 4);
         systemCLS.clearScreen();
 
@@ -56,28 +55,32 @@ public class admin {
 
     private static void lihatRestoran() {
         if (restaurant.size() == 0) {
-            System.out.println("Tidak ada restoran.");
+            System.out.println("Tidak ada restoran, tambahkan restroan terlebih dahulu :)");
             adminMenu();
-            return; // Menghentikan eksekusi metode setelah menampilkan pesan
+            return;
         }
 
         int id = 1;
+
+        System.out.println("[]===========================================[]");
+        System.out.println("[]                LIST RESTORAN              []");
+        System.out.println("[]===========================================[]");
         for (Restoran restoran : restaurant) {
-            System.out.printf("%d. %s-%s\n", id, restoran.getNamaResto(), restoran.getAlamat());
+            System.out.printf("%d. %s - %s\n", id, restoran.getNamaResto(), restoran.getAlamat());
             id++;
         }
-
+        System.out.println("");
         System.out.println("Masukkan ID restoran : ");
-        int idResto = scanner.nextInt();
+        int idResto = userInput.getIntegerbiasa();
 
         if (idResto < 1 || idResto > restaurant.size()) {
             System.out.println("ID restoran tidak valid.");
             return;
         }
-
+        systemCLS.clearScreen();
         Restoran restoranPilihan = restaurant.get(idResto - 1);
 
-        System.out.printf("%s - %s\n", restoranPilihan.getNamaResto(), restoranPilihan.getAlamat());
+        System.out.printf("Restoran : %s - %s\n", restoranPilihan.getNamaResto(), restoranPilihan.getAlamat());
         System.out.println("Menu Makanan:");
 
         ArrayList<ArrayList<String>> makanan = restoranPilihan.getMakanan();
@@ -89,7 +92,7 @@ public class admin {
                 System.out.printf("%d. %s - Rp. %s\n", i + 1, food.get(0), food.get(1));
             }
         }
-
+        System.out.println("");
         System.out.println("Menu Minuman:");
 
         ArrayList<ArrayList<String>> minuman = restoranPilihan.getMinuman();
@@ -101,6 +104,8 @@ public class admin {
                 System.out.printf("%d. %s - Rp. %s\n", i + 1, drink.get(0), drink.get(1));
             }
         }
+        userInput.hold();
+        systemCLS.clearScreen();
         adminMenu();
     }
 
@@ -124,9 +129,6 @@ public class admin {
             System.out.println("||                2. Minuman                 ||");
             System.out.println("||          0. Kembali ke menu utama         ||");
             System.out.println("[]===========================================[]");
-
-            System.out.print("> ");
-
             pilihan = userInput.getInteger(0, 2);
 
             if (pilihan == 0) {
@@ -136,13 +138,9 @@ public class admin {
             }
 
             System.out.println("Masukkan nama menu");
-            System.out.print("> ");
-
             String namaMenu = userInput.getString();
 
             System.out.println("Masukkan harga menu");
-            System.out.print("> ");
-
             String hargaMenu = Double.toString(userInput.getDouble());
 
             switch (pilihan) {
@@ -158,8 +156,8 @@ public class admin {
                     break;
             }
 
-            System.out.println("Apakah anda ingin menambah menu lagi? 1 YA 0 TIDAK");
-            System.out.print("> ");
+            System.out.println("Apakah anda ingin menambah menu lagi?");
+            System.out.println("|1| untuk menambahkan menu lagi - |0| untuk berhenti menambahkan menu");
             konfirm = userInput.getInteger(0, 1);
 
         } while (konfirm != 0);
@@ -167,35 +165,51 @@ public class admin {
         systemCLS.clearScreen();
         System.out.println("Restoran berhasil ditambahkan!!");
         userInput.hold();
+        systemCLS.clearScreen();
         adminMenu();
     }
 
     private static void hapusRestoran() {
         if (restaurant.size() == 0) {
-            System.out.println("Tidak ada restoran.");
+            System.out.println("Tidak ada restoran yang bisa dihapus, tambahkan restoran terlebih dahulu :)");
+            userInput.hold();
+            systemCLS.clearScreen();
             adminMenu();
-            return; // Menghentikan eksekusi metode setelah menampilkan pesan
+            return;
         }
+
+        System.out.println("[]===========================================[]");
+        System.out.println("[]                LIST RESTORAN              []");
+        System.out.println("[]===========================================[]");
 
         int id = 1;
         for (Restoran restoran : restaurant) {
             System.out.printf("%d. %s-%s\n", id, restoran.getNamaResto(), restoran.getAlamat());
             id++;
         }
-
-        System.out.println("pilih yg mau di hapus");
-        int hapus = userInput.getInteger(1, 2);
-
-        System.out.printf("hapus : %s - %s",
+        System.out.println("");
+        System.out.println("Pilih ID Restoran yang ingin anda hapus (cont : 1)");
+        int hapus = userInput.getIntegerbiasa();
+        systemCLS.clearScreen();
+        System.out.printf("Restoran : \t\t%s - %s",
                 getRestaurants().get(hapus - 1).getNamaResto(),
                 getRestaurants().get(hapus - 1).getAlamat());
-        System.out.println("1 conf, 0 balik");
+        System.out.println("");
+        System.out.println("!!!        APAKAH ANDA YAKIN MENGHAPUS RESTORAN INI?        !!!");
+        System.out.println("!!! SEMUA DATA AKAN HILANG SAAT ANDA MENGHAPUS RESTORAN INI !!!");
+        System.out.println("");
+        System.out.println("|1| KONFIRMASI -- |0| KEMBALI KE MENU");
         int konfirm = userInput.getInteger(0, 1);
+
         if (konfirm == 1) {
             hapusResto(hapus - 1);
-            System.out.println("sudha terhapus");
+            systemCLS.clearScreen();
+            System.out.println("Restoran sudah dihapus!");
+            userInput.hold();
+            systemCLS.clearScreen();
             adminMenu();
         } else {
+            systemCLS.clearScreen();
             adminMenu();
         }
 
