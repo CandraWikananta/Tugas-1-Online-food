@@ -6,6 +6,15 @@ Di bawah ini adalah deskripsi program, penjelasan dari bagaimana program akan di
 
 ## Daftar Isi
 
+- [Tugas 1](#tugas-1-mata-kuliah-pemrograman-basis-objek---program-membeli-makanan-online-berbasis-command-line\)
+  - [Daftar Isi](#daftar-isi)
+  - [Creator](#creator)
+  - [UML](#desain-uml)
+  - [Batasan](#batasan-program)
+  - [Aplikasi Yang DIgunakan](#aplikasi-yang-digunakan)
+  - [Alur](#alur-program)
+  - [Penutup](#penutup)
+
 ## Creator
 
 Putu Devasya Aditya Widyadana - 2305551071
@@ -106,6 +115,12 @@ Setelah memilih ID Resto berapa yang akan dihaps, akan tampil data restoran bese
 ![selesaiHapusResto](/gambar/hapusRestoDone.jpg "Selesai hapus resto")
 
 Jika user memilih untuk mengonfirmasi penghapusan, maka restoran tersebut akan terhapus. Sedangkan jika user memilih batal, maka tampilan akan kembali ke menu awal admin.
+
+4 **Kembali Ke Menu Login**
+
+![kembaliKeLogin](/gambar/kembaliKeLogin.jpg "Kembali ke login")
+
+Jika user memilih menu 'kembali ke login', maka akan tampil pesan seperti gambar di atas. Selelah pengguna menekan enter, maka user akan kembali ke menu login.
 
 ## Penutup
 
