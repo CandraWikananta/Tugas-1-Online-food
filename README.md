@@ -12,7 +12,8 @@ Di bawah ini adalah deskripsi program, penjelasan dari bagaimana program akan di
   - [UML](#desain-uml)
   - [Batasan](#batasan-program)
   - [Aplikasi Yang DIgunakan](#aplikasi-yang-digunakan)
-    - [VSCode](#visual-studio-code) -[Java Extension Pack](#extension-pack-for-java)
+    - [VSCode](#visual-studio-code)
+    - [Java Extension Pack](#extension-pack-for-java)
   - [Alur](#alur-program)
     - [Login](#login)
     - [Admin](#admin)
@@ -21,6 +22,7 @@ Di bawah ini adalah deskripsi program, penjelasan dari bagaimana program akan di
 
 ## Creator
 
+Pembuat program ini :
 Putu Devasya Aditya Widyadana - 2305551071
 I Nyoman Gede Candra Wikananta - 2305551065
 
