@@ -1,13 +1,12 @@
 import java.util.*;
 
 public class admin {
-<<<<<<< HEAD
     public static String usernameAdmin = "admin";
     public static String passwordAdmin = "admin";
     
     public static Scanner scanner = new Scanner(System.in);
-=======
->>>>>>> 83106933589c14e5d8c44fb3b1582aa353dc8fa3
+
+
     public static ArrayList<Restoran> restaurant = new ArrayList<>();
 
     public static void tambahResto(Restoran restaurants) {
@@ -83,7 +82,7 @@ public class admin {
             System.out.println("ID restoran tidak valid.");
             return;
         }
-        systemCLS.clearScreen();
+        App.clearScreen();
         Restoran restoranPilihan = restaurant.get(idResto - 1);
 
         System.out.printf("Restoran : %s - %s\n", restoranPilihan.getNamaResto(), restoranPilihan.getAlamat());
@@ -111,7 +110,7 @@ public class admin {
             }
         }
         userInput.hold();
-        systemCLS.clearScreen();
+        App.clearScreen();
         adminMenu();
     }
 
@@ -171,7 +170,7 @@ public class admin {
         App.clearScreen();
         System.out.println("Restoran berhasil ditambahkan!!");
         userInput.hold();
-        systemCLS.clearScreen();
+        App.clearScreen();
         adminMenu();
     }
 
@@ -179,7 +178,7 @@ public class admin {
         if (restaurant.size() == 0) {
             System.out.println("Tidak ada restoran yang bisa dihapus, tambahkan restoran terlebih dahulu :)");
             userInput.hold();
-            systemCLS.clearScreen();
+            App.clearScreen();
             adminMenu();
             return;
         }
@@ -196,7 +195,7 @@ public class admin {
         System.out.println("");
         System.out.println("Pilih ID Restoran yang ingin anda hapus (cont : 1)");
         int hapus = userInput.getIntegerbiasa();
-        systemCLS.clearScreen();
+        App.clearScreen();
         System.out.printf("Restoran : \t\t%s - %s",
                 getRestaurants().get(hapus - 1).getNamaResto(),
                 getRestaurants().get(hapus - 1).getAlamat());
@@ -209,13 +208,13 @@ public class admin {
 
         if (konfirm == 1) {
             hapusResto(hapus - 1);
-            systemCLS.clearScreen();
+            App.clearScreen();
             System.out.println("Restoran sudah dihapus!");
             userInput.hold();
-            systemCLS.clearScreen();
+            App.clearScreen();
             adminMenu();
         } else {
-            systemCLS.clearScreen();
+            App.clearScreen();
             adminMenu();
         }
 
