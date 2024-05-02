@@ -7,6 +7,7 @@ public class userInput {
         int input;
         while (true) {
             try {
+                System.out.print("> ");
                 input = scan.nextInt();
                 scan.nextLine();
                 if (input >= min && input <= maks) {
@@ -27,6 +28,7 @@ public class userInput {
     public static String getString() {
         String input;
         while (true) {
+            System.out.print("> ");
             input = scan.nextLine();
             if (input == null || input.length() == 0) {
                 System.out.println("Input salah, silahkan masukkan kembali");
@@ -36,11 +38,12 @@ public class userInput {
         }
         return input;
     }
-    
+
     public static double getDouble() {
         double input;
         while (true) {
             try {
+                System.out.print("> ");
                 input = scan.nextDouble();
                 scan.nextLine();
                 return input; // Menambahkan pernyataan return untuk mengembalikan nilai input yang berhasil
@@ -52,10 +55,26 @@ public class userInput {
         }
     }
 
+    public static int getIntegerbiasa() {
+        int input;
+        while (true) {
+            try {
+                System.out.print("> ");
+                input = scan.nextInt();
+                scan.nextLine();
+                return input;
+
+            } catch (InputMismatchException e) {
+                System.out.println("Input salah, silahkan masukkan kembali");
+                scan.nextLine();
+            }
+        }
+    }
+
     public static void hold() {
         System.out.println("");
         System.out.println("Tekan apapun untuk melanjutkan");
-        System.out.println(" >");
+        System.out.print("> ");
         scan.nextLine();
     }
 
