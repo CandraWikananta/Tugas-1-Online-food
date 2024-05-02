@@ -27,9 +27,8 @@ public class userInput {
     public static String getString() {
         String input;
         while (true) {
-            input = scan.next();
-            scan.nextLine();
-            if (input == null && input.length() == 0) {
+            input = scan.nextLine();
+            if (input == null || input.length() == 0) {
                 System.out.println("Input salah, silahkan masukkan kembali");
             } else {
                 break;
@@ -37,7 +36,7 @@ public class userInput {
         }
         return input;
     }
-
+    
     public static double getDouble() {
         double input;
         while (true) {
