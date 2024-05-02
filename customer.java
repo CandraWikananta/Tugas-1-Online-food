@@ -11,7 +11,7 @@ public class customer {
         System.out.println("[]===================================[]");
         System.out.println("Masukkan Pilihan");
         System.out.print("> ");
-        int choice = userInput.nextInt();
+        int choice = userInput.getInteger(0, 3);
 
         switch (choice) {
             case 1:
