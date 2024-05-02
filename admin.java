@@ -50,6 +50,7 @@ public class admin {
                 break;
 
             case 4:
+            main.main(null);
                 break;
         }
     }
@@ -160,6 +161,10 @@ public class admin {
 
     private static void hapusRestoran() {
 
+    }
+
+    public static ArrayList<Restoran> getRestaurants() {
+        return restaurant;
     }
 
 }
