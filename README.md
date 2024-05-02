@@ -6,8 +6,23 @@ Di bawah ini adalah deskripsi program, penjelasan dari bagaimana program akan di
 
 ## Daftar Isi
 
+- [Tugas 1](#tugas-1-mata-kuliah-pemrograman-basis-objek---program-membeli-makanan-online-berbasis-command-line)
+  - [Daftar Isi](#daftar-isi)
+  - [Creator](#creator)
+  - [UML](#desain-uml)
+  - [Batasan](#batasan-program)
+  - [Aplikasi Yang DIgunakan](#aplikasi-yang-digunakan)
+    - [VSCode](#visual-studio-code)
+    - [Java Extension Pack](#extension-pack-for-java)
+  - [Alur](#alur-program)
+    - [Login](#login)
+    - [Admin](#admin)
+    - [Customer](#customer)
+  - [Penutup](#penutup)
+
 ## Creator
 
+Pembuat program ini :
 Putu Devasya Aditya Widyadana - 2305551071
 I Nyoman Gede Candra Wikananta - 2305551065
 
@@ -19,7 +34,7 @@ Diagram UML adalah cara untuk memvisualisasikan sistem dan perangkat lunak mengg
 
 Adapun batasan program yang sudah kami buat, antara lain :
 
-- Program ini hanya melayani dua tipe pengguna, yaitu customoer dan admnin
+- Program ini hanya melayani dua tipe pengguna, yaitu customer dan admin
 - Username dan Password ditulis di dalam kode langsung
 - Hanya tersedia satu bahasa, yaitu bahasa Indonesia
 
@@ -38,6 +53,82 @@ Paket Ekstensi untuk Java adalah kumpulan ekstensi populer yang dapat membantu m
 ## Alur Program
 
 Adapun alur dari program yang telah kami buat sebagai berikut :
+
+### Login
+
+![login](/gambar/login.jpg "login")
+
+Penggunaan program diawali dengan login pengguna. Terdapat dua jenis penggguna yaitu customer dan admin .Pengguna dapat login ke dalam program ini dengan username dan password yang telah kami set di dalam program ini. Berikut adalah username dan passowrd untuk masing - masing pengguna.
+
+**Customer**
+`Username   : customer`
+`Password   : customer`
+
+**Admin**
+`Username   : admin`
+`Password   : admin`
+
+![loginSuccess](/gambar/loginSuccess.jpg "loginSuccess")
+
+Jika pengguna memasukkan username dan password yang benar, maka pengguna akan diarahkan ke salah satu tipe user pada aplikasi ini.
+
+### Admin
+
+1. **Menu Utama**
+
+Setelah melakukan login dengan username dan password yang sesuai, maka pengguna akan diarahakan ke menu admin. Berikut adalah tampilan awal menu admin
+
+![Menu utama](/gambar/menuUtamaAdm.jpg "Menu utama")
+
+2. **Lihat Restoran**
+
+![Lihat restoran](/gambar/lihatRestoOp.jpg "Lihat restoran")
+
+Jika pengguna memilih menu lihat restoran, maka tampilan menu pertama adalah list restoran yang sudah ditambahkan sebelumnya. Selanjutnya pengguna akan memilih ID restoran berapa yang ingin ditampilkan menunya.
+
+![List Menu](/gambar/lihatRestoAftInput.jpg "List menu")
+
+Setelah pengguna memilih ID Restoran, maka akan tampil list menu yang telah ditambahkan sebelumnya seperti pada contoh gambar di atas. Setelah selesai melihat, pengguna hanya cukup menekan enter untuk kembali ke halaman utama admin.
+
+3. **Tambah Restoran**
+
+![Tambah menu](/gambar/tambahRRestoOp.jpg "Tambah menu")
+
+Jika pengguna memilih menu tambah restoran, maka tampilan menu pertama adalah pengguna diminta untuk memasukkan nama restoran dan alamat restoran yang ingin dibuat.
+
+![TambahF-D](/gambar/tambahMenu.jpg "TambahF-D")
+
+Setelah memasukkan nama restoran dan alamat restoran, user akan diperkian pilihan untuk menambahkan menu makanan ataupun menu minuman
+
+![selesaiTambahMenu](/gambar/tambahMenuDone.jpg "Selesai tambah menu")
+
+Setelah memilih ingin menambah menu makanan atau minuman, user akan diminta untuk menlengkapi data untuk menu seperti nama menu dan harga menu. Kita dapat menambahkan menu makanan dan minuman berkai - kali tergantung keinginan kita
+
+![selesaiTambahResto](/gambar/tambahRestoDone.jpg "Selesai tambah resto")
+
+Jika user sudah tidak mau menambahkan menu, maka data restoran akan disimpan berserta data menu yang telah dimasukkan.
+
+3. **Hapus Restoran**
+
+![hapusResto](/gambar/hapusRestoOp.jpg "Hapus resto")
+
+Jika pengguna memilih menu hapus restoran, maka tampilan menu pertama adalah list restoran yang sudah ditambahkan sebelumnya seperti gambar di atas. Selanjutnya pengguna akan memilih ID restoran berapa yang akan dihapus.
+
+![konfirmHapusResto](/gambar/hapusRestokonfirm.jpg "Konfirmasi hapus resto")
+
+Setelah memilih ID Resto berapa yang akan dihaps, akan tampil data restoran beserta pesan konfirmasi penghapusan. Jika kita melakukan penghapusan maka semua data restoran dengan ID Restoran yang kita pilih akan hilang datanya.
+
+![selesaiHapusResto](/gambar/hapusRestoDone.jpg "Selesai hapus resto")
+
+Jika user memilih untuk mengonfirmasi penghapusan, maka restoran tersebut akan terhapus. Sedangkan jika user memilih batal, maka tampilan akan kembali ke menu awal admin.
+
+4 **Kembali Ke Menu Login**
+
+![kembaliKeLogin](/gambar/kembaliKeLogin.jpg "Kembali ke login")
+
+Jika user memilih menu 'kembali ke login', maka akan tampil pesan seperti gambar di atas. Selelah pengguna menekan enter, maka user akan kembali ke menu login.
+
+### Customer
 
 ## Penutup
 
