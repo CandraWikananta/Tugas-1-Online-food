@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class admin {
-    public static Scanner scanner = new Scanner(System.in);
     public static ArrayList<Restoran> restaurant = new ArrayList<>();
 
     public static void tambahResto(Restoran restaurants) {
