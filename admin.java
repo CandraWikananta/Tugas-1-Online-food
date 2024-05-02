@@ -132,8 +132,8 @@ public class admin {
             System.out.println("masukkan nama menu");
             String namaMenu = userInput.getString();
 
-            System.out.println("masukkan harga menu");
-            String hargaMenu = userInput.getString();
+            System.out.println("Masukkan harga menu");
+            String hargaMenu = Double.toString(userInput.getDouble());
 
             switch (pilihan) {
                 case 1:
@@ -177,7 +177,7 @@ public class admin {
         System.out.printf("hapus : %s - %s",
                 getRestaurants().get(hapus - 1).getNamaResto(),
                 getRestaurants().get(hapus - 1).getAlamat());
-        System.out.println("\n1 confirm, 0 balik");
+        System.out.println("1 conf, 0 balik");
         int konfirm = userInput.getInteger(0, 1);
         if (konfirm == 1) {
             hapusResto(hapus - 1);
