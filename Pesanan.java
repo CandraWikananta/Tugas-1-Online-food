@@ -8,7 +8,6 @@ public class Pesanan {
     private int jarak;
     private int totalHarga;
 
-    // Konstruktor
     public Pesanan(int idRestoran, ArrayList<ItemPesanan> makananPesanan, ArrayList<ItemPesanan> minumanPesanan, int jarak, int totalHarga, ArrayList<Restoran> daftarRestoran) {
     this.idRestoran = idRestoran;
     this.makananPesanan = makananPesanan;
@@ -23,7 +22,6 @@ public class Pesanan {
     }
     
 
-    // Getter dan Setter
     public int getIdRestoran() {
         return idRestoran;
     }
@@ -34,7 +32,7 @@ public class Pesanan {
                 return restoran.getNamaResto();
             }
         }
-        return "Restoran tidak ditemukan"; // Tambahkan logika jika ID restoran tidak ditemukan
+        return "Restoran tidak ditemukan";
     }
 
     public void setIdRestoran(int idRestoran) {

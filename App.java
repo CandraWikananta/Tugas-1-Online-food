@@ -28,9 +28,9 @@ public class App {
             System.out.println("[] ================================================= []");
             System.out.println("\nSilahkan Login terlebih dahulu.");
             System.out.println("-------------------------------------------------");
-            System.out.print("Username : ");
+            System.out.print("Username : \n");
             String username = userInput.getString();
-            System.out.print("Password : ");
+            System.out.print("Password : \n");
             String password = userInput.getString();
 
             if (username.equals(admin.usernameAdmin) && password.equals(admin.passwordAdmin)) {

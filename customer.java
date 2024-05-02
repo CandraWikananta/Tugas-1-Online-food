@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class customer {
     public static String usernameCustomer = "customer";
@@ -18,7 +17,6 @@ public class customer {
         System.out.println("|| [4] Log out                       ||");
         System.out.println("[]===================================[]");
         System.out.println("Masukkan Pilihan");
-        System.out.print("> ");
         int choice = userInput.getInteger(1, 4);
 
         switch (choice) {
@@ -50,7 +48,6 @@ public class customer {
     }
 
     public static void orderFood(ArrayList<Restoran> restaurants) {
-        ArrayList<ItemPesanan> pesananItems = new ArrayList<>();
         ArrayList<ItemPesanan> makananPesanan = new ArrayList<>();
         ArrayList<ItemPesanan> minumanPesanan = new ArrayList<>();
 
@@ -71,7 +68,7 @@ public class customer {
         }
 
         // Memilih restoran
-        System.out.print("Pilih nomor restoran: ");
+        System.out.print("Pilih nomor restoran: \n");
         int restoranIndex = userInput.getIntegerbiasa();
 
         if (restoranIndex < 1 || restoranIndex > restaurants.size()) {
@@ -83,11 +80,10 @@ public class customer {
 
         while (pesanLagi) {
             App.clearScreen();
-            System.out.println("[]==============================[]");
-            System.out.println("       Menu " + restoranPilihan.getNamaResto());
-            System.out.println("[]==============================[]\n");
+            System.out.println("Menu " + restoranPilihan.getNamaResto());
+            System.out.println("----------------------------------");
 
-            System.out.println("Menu Makanan:");
+            System.out.println("\nMenu Makanan:");
             ArrayList<ArrayList<String>> makanan = restoranPilihan.getMakanan();
             for (int i = 0; i < makanan.size(); i++) {
                 food = makanan.get(i);
@@ -102,7 +98,6 @@ public class customer {
             }
 
             System.out.println("\nApakah ingin memesan makanan atau minuman? (makanan/minuman): ");
-            System.out.print("> ");
             String jenisPesan = userInput.getString();
 
             if (!jenisPesan.equalsIgnoreCase("makanan") && !jenisPesan.equalsIgnoreCase("minuman")) {
@@ -111,7 +106,7 @@ public class customer {
                 orderFood(restaurants);
             }
 
-            System.out.print("Pilih nomor menu " + jenisPesan + " yang ingin dipesan: ");
+            System.out.print("Pilih nomor menu " + jenisPesan + " yang ingin dipesan: \n");
             int menuIndex = userInput.getIntegerbiasa();
 
             ArrayList<ArrayList<String>> pesanan;
@@ -123,13 +118,14 @@ public class customer {
 
             if (menuIndex < 1 || menuIndex > pesanan.size()) {
                 System.out.println("Nomor menu tidak valid.");
-                return;
+                userInput.hold();
+                orderFood(restaurants);
             }
 
             // Menentukan indeks menu di dalam ArrayList
             int indexMenu = menuIndex - 1;
 
-            System.out.print("Masukkan jumlah " + jenisPesan + " yang ingin dipesan: ");
+            System.out.print("Masukkan jumlah " + jenisPesan + " yang ingin dipesan: \n");
             jumlahPesan = userInput.getIntegerbiasa();
 
             if (jenisPesan.equalsIgnoreCase("makanan")) {
@@ -152,7 +148,7 @@ public class customer {
 
             totalHarga += (jumlahPesan * Integer.parseInt(pesanan.get(indexMenu).get(1)));
 
-            System.out.print("\nApakah ingin memesan lagi? (ya/tidak): ");
+            System.out.print("\nApakah ingin memesan lagi? (ya/tidak): \n");
             String input = userInput.getString();
 
             if (!input.equalsIgnoreCase("ya")) {
@@ -160,7 +156,7 @@ public class customer {
             }
         }
 
-        System.out.print("Masukkan jarak rumah anda (KM): ");
+        System.out.print("Masukkan jarak rumah anda (KM): \n");
         int jarakRumah = userInput.getIntegerbiasa();
         int hargaOngkir = jarakRumah * 1850;
 
@@ -187,11 +183,13 @@ public class customer {
             id++;
         }
 
-        System.out.print("Pilih nomor restoran: ");
+        System.out.print("Pilih nomor restoran: \n");
         int restoranIndex = userInput.getInteger(1, restaurants.size());
 
         Restoran restoranPilihan = restaurants.get(restoranIndex - 1);
+        App.clearScreen();
 
+        System.out.println("---------------------------------------------------------");
         System.out.println("Menu " + restoranPilihan.getNamaResto() + ":");
         System.out.println("Menu Makanan:");
         ArrayList<ArrayList<String>> makanan = restoranPilihan.getMakanan();
@@ -200,12 +198,14 @@ public class customer {
             System.out.printf("%d. %s - Rp. %s\n", i + 1, food.get(0), food.get(1));
         }
 
-        System.out.println("Menu Minuman:");
+        System.out.println("\nMenu Minuman:");
         ArrayList<ArrayList<String>> minuman = restoranPilihan.getMinuman();
         for (int i = 0; i < minuman.size(); i++) {
             ArrayList<String> drink = minuman.get(i);
             System.out.printf("%d. %s - Rp. %s\n", i + 1, drink.get(0), drink.get(1));
         }
+        System.out.println("---------------------------------------------------------");
+        userInput.hold();
         menuCustomer();
     }
 
@@ -217,7 +217,9 @@ public class customer {
         } else {
             for (int i = 0; i < riwayatPesanan.size(); i++) {
                 Pesanan pesanan = riwayatPesanan.get(i);
+                System.out.println("----------------------------------------");
                 System.out.println("Pesanan ke-" + (i + 1));
+                System.out.println("----------------------------------------");
                 int idRestoran = pesanan.getIdRestoran();
                 ArrayList<Restoran> daftarRestoran = pesanan.getDaftarRestoran();
     
@@ -229,7 +231,7 @@ public class customer {
                     System.out.println("ID Restoran tidak valid");
                 }
     
-                System.out.println("Makanan:");
+                System.out.println("\nMakanan:");
                 for (ItemPesanan item : pesanan.getMakananPesanan()) {
                     System.out.println("Nama Item: " + item.getNama()); 
                     System.out.println("Jumlah Pesanan: " + item.getJumlah()); 
@@ -242,10 +244,10 @@ public class customer {
                     System.out.println("Nama Item: " + item.getNama()); 
                     System.out.println("Jumlah Pesanan: " + item.getJumlah()); 
                     System.out.println("Harga: " + item.getHarga()); 
-                    System.out.println(); 
+                    
                 }
     
-                System.out.println("Jarak: " + pesanan.getJarak() + " KM");
+                System.out.println("\nJarak: " + pesanan.getJarak() + " KM");
                 System.out.println("Total Harga Makanan: Rp. " + pesanan.getTotalHarga());
     
                 int hargaOngkir = pesanan.getJarak() * 1850;
@@ -253,7 +255,7 @@ public class customer {
     
                 int totalHargaKeseluruhan = pesanan.getTotalHarga() + hargaOngkir;
                 System.out.println("Total Harga Keseluruhan: Rp. " + totalHargaKeseluruhan);
-                System.out.println();
+                System.out.println("----------------------------------------\n");
             }
         }
     

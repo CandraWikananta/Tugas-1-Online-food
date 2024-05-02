@@ -148,7 +148,7 @@ public class admin {
             String namaMenu = userInput.getString();
 
             System.out.println("Masukkan harga menu");
-            String hargaMenu = Double.toString(userInput.getDouble());
+            String hargaMenu = userInput.getString();
 
             switch (pilihan) {
                 case 1:

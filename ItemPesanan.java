@@ -4,11 +4,9 @@ public class ItemPesanan {
     private int harga;
     private int jumlah;
 
-    // Konstruktor
-    public ItemPesanan(String nama, int harga, int jumlah) {
-        // this.idMenu = idMenu;
+    public ItemPesanan(String nama, int d, int jumlah) {
         this.nama = nama;
-        this.harga = harga;
+        this.harga = d;
         this.jumlah = jumlah;
     }
 
