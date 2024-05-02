@@ -51,7 +51,7 @@ public class admin {
                 System.out.println("");
                 System.out.println(" Tekan apapun untuk melanjutkan");
                 scanner.nextLine();
-                main.main(null);
+                Login.logIn();
                 break;
         }
     }
@@ -177,7 +177,7 @@ public class admin {
         System.out.printf("hapus : %s - %s",
                 getRestaurants().get(hapus - 1).getNamaResto(),
                 getRestaurants().get(hapus - 1).getAlamat());
-        System.out.println("1 conf, 0 balik");
+        System.out.println("\n1 confirm, 0 balik");
         int konfirm = userInput.getInteger(0, 1);
         if (konfirm == 1) {
             hapusResto(hapus - 1);

@@ -37,7 +37,7 @@ public class customer {
                 break;
             
             case 4:
-                main.main(null);
+                Login.logIn();
                 break;
         
             default:
