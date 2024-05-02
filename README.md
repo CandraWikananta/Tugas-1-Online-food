@@ -19,7 +19,7 @@ Diagram UML adalah cara untuk memvisualisasikan sistem dan perangkat lunak mengg
 
 Adapun batasan program yang sudah kami buat, antara lain :
 
-- Program ini hanya melayani dua tipe pengguna, yaitu customoer dan admnin
+- Program ini hanya melayani dua tipe pengguna, yaitu customer dan admin
 - Username dan Password ditulis di dalam kode langsung
 - Hanya tersedia satu bahasa, yaitu bahasa Indonesia
 
@@ -38,6 +38,21 @@ Paket Ekstensi untuk Java adalah kumpulan ekstensi populer yang dapat membantu m
 ## Alur Program
 
 Adapun alur dari program yang telah kami buat sebagai berikut :
+
+### Login
+
+![login](/gambar/login.jpg "login")
+Penggunaan program diawali dengan login pengguna. Terdapat dua jenis penggguna yaitu customer dan admin .Pengguna dapat login ke dalam program ini dengan username dan password yang telah kami set di dalam program ini. Berikut adalah username dan passowrd untuk masing - masing pengguna.
+**Customer**
+`Username   : customer`
+`Password   : customer`
+
+**Admin**
+`Username   : admin`
+`Password   : admin`
+
+![loginSuccess](/gambar/loginSuccess.jpg "loginSuccess")
+Jika pengguna memasukkan username dan password yang benar, maka pengguna akan diarahkan ke salah satu tipe user pada aplikasi ini.
 
 ## Penutup
 
