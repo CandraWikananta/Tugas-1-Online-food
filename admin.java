@@ -48,9 +48,7 @@ public class admin {
                 System.out.println("[]===========================================[]");
                 System.out.println("[] Terimakasih Telah Menggunakan Program Kami[]");
                 System.out.println("[]===========================================[]");
-                System.out.println("");
-                System.out.println(" Tekan apapun untuk melanjutkan");
-                scanner.nextLine();
+                userInput.hold();
                 Login.logIn();
                 break;
         }
@@ -109,30 +107,42 @@ public class admin {
     private static void tambahRestoran() {
         int pilihan = 0;
         int konfirm = 0;
-        System.out.println("MASUKKAN NAMA RESTORAN : ");
+        System.out.println("Masukkan nama restoran : ");
         String namaResto = userInput.getString();
 
-        System.out.println("MASUKKAN ALAMAT RESTORAN : ");
+        System.out.println("Masukkan alamat restoran : ");
         String alamat = userInput.getString();
 
         Restoran restoran = new Restoran(namaResto, alamat);
+        systemCLS.clearScreen();
 
         do {
-            System.out.println("1. makanan");
-            System.out.println("2. minuman");
-            System.out.println("0. kembali");
+            systemCLS.clearScreen();
+            System.out.println("[]===========================================[]");
+            System.out.println("||    Pilih menu yang ingin ditambahkan!     ||");
+            System.out.println("||                1. Makanan                 ||");
+            System.out.println("||                2. Minuman                 ||");
+            System.out.println("||          0. Kembali ke menu utama         ||");
+            System.out.println("[]===========================================[]");
+
+            System.out.print("> ");
 
             pilihan = userInput.getInteger(0, 2);
 
             if (pilihan == 0) {
-                tambahRestoran();
+                systemCLS.clearScreen();
+                adminMenu();
                 return;
             }
 
-            System.out.println("masukkan nama menu");
+            System.out.println("Masukkan nama menu");
+            System.out.print("> ");
+
             String namaMenu = userInput.getString();
 
             System.out.println("Masukkan harga menu");
+            System.out.print("> ");
+
             String hargaMenu = Double.toString(userInput.getDouble());
 
             switch (pilihan) {
@@ -148,13 +158,15 @@ public class admin {
                     break;
             }
 
-            System.out.println("apakah anda ingin menambah lagi? 1 YA 0 TIDAK");
+            System.out.println("Apakah anda ingin menambah menu lagi? 1 YA 0 TIDAK");
+            System.out.print("> ");
             konfirm = userInput.getInteger(0, 1);
 
         } while (konfirm != 0);
-
         tambahResto(restoran);
-        System.out.println("data berhasil ditambahkan");
+        systemCLS.clearScreen();
+        System.out.println("Restoran berhasil ditambahkan!!");
+        userInput.hold();
         adminMenu();
     }
 
