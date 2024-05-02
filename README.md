@@ -60,6 +60,7 @@ Jika pengguna memasukkan username dan password yang benar, maka pengguna akan di
 ## Admin
 
 1. **Menu Utama**
+
    Setelah melakukan login dengan username dan password yang sesuai, maka pengguna akan diarahakan ke menu admin. Berikut adalah tampilan awal menu admin
 
 ![Menu utama](/gambar/menuUtamaAdm.jpg "Menu utama")
@@ -68,13 +69,29 @@ Jika pengguna memasukkan username dan password yang benar, maka pengguna akan di
 
 ![Lihat restoran](/gambar/lihatRestoOp.jpg "Lihat restoran")
 
-Jika pengguna memilih menu lihat restoran, maka tampilan menu pertama adalah list restoran yang sudah ditambahkan sebelumnya. Selanjutnya pengguna akan memilih ID restoran berapa yang ingin ditampilkan menunya.
+    Jika pengguna memilih menu lihat restoran, maka tampilan menu pertama adalah list restoran yang sudah ditambahkan sebelumnya. Selanjutnya pengguna akan memilih ID restoran berapa yang ingin ditampilkan menunya.
 
 ![List Menu](/gambar/lihatRestoAftInput.jpg "List menu")
 
-Setelah pengguna memilih ID Restoran, maka akan tampil list menu yang telah ditambahkan sebelumnya seperti pada contoh gambar di atas. Setelah selesai melihat, pengguna hanya cukup menekan enter untuk kembali ke halaman utama admin.
+    Setelah pengguna memilih ID Restoran, maka akan tampil list menu yang telah ditambahkan sebelumnya seperti pada contoh gambar di atas. Setelah selesai melihat, pengguna hanya cukup menekan enter untuk kembali ke halaman utama admin.
 
-Setelah pengguna mem
+3. **Tambah Restoran**
+
+![Tambah menu](/gambar/tambahRRestoOp.jpg "Tambah menu")
+
+Jika pengguna memilih menu tambah restoran, maka tampilan menu pertama adalah pengguna diminta untuk memasukkan nama restoran dan alamat restoran yang ingin dibuat. 
+
+![TambahF-D](/gambar/tambahMenu.jpg "TambahF-D")
+
+Setelah memasukkan nama restoran dan alamat restoran, user akan diperkian pilihan untuk menambahkan menu makanan ataupun menu minuman
+
+![selesaiTambahMenu](/gambar/tambahMenuDone.jpg "Selesai tambah menu")
+
+Setelah memilih ingin menambah menu makanan atau minuman, user akan diminta untuk menlengkapi data untuk menu seperti nama menu dan harga menu. Kita dapat menambahkan menu makanan dan minuman berkai - kali tergantung keinginan kita
+
+![selesaiTambahResto](/gambar/tambahRestoDone.jpg "Selesai tambah resto")
+
+Jika user sudah tidak mau menambahkan menu, maka data restoran akan disimpan berserta data menu yang telah dimasukkan.
 
 ## Penutup
 
