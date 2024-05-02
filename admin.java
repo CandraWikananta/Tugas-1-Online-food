@@ -2,7 +2,7 @@ import java.util.*;
 
 public class admin {
     public static Scanner scanner = new Scanner(System.in);
-    private static ArrayList<Restoran> restaurant = new ArrayList<>();
+    public static ArrayList<Restoran> restaurant = new ArrayList<>();
 
     public static String getString() {
         String text;
