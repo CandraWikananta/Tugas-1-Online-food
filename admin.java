@@ -4,7 +4,6 @@ public class admin {
     public static Scanner scanner = new Scanner(System.in);
     private static ArrayList<Restoran> restaurant = new ArrayList<>();
 
-
     public static void tambahResto(Restoran restaurants) {
         restaurant.add(restaurants);
     }
@@ -28,9 +27,9 @@ public class admin {
                         "||4. Kembali ke login             ||\n" +
                         "[]================================[]\n");
         System.out.println("Masukkan pilihan : ");
-        System.out.print(">");
-        int pilihanMenu = scanner.nextInt();
-        scanner.nextLine();
+        System.out.print("> ");
+        int pilihanMenu = userInput.getInteger(1, 4);
+        systemCLS.clearScreen();
 
         switch (pilihanMenu) {
             case 1:
@@ -46,7 +45,13 @@ public class admin {
                 break;
 
             case 4:
-            main.main(null);
+                System.out.println("[]===========================================[]");
+                System.out.println("[] Terimakasih Telah Menggunakan Program Kami[]");
+                System.out.println("[]===========================================[]");
+                System.out.println("");
+                System.out.println(" Tekan apapun untuk melanjutkan");
+                scanner.nextLine();
+                main.main(null);
                 break;
         }
     }
@@ -66,7 +71,6 @@ public class admin {
 
         System.out.println("Masukkan ID restoran : ");
         int idResto = scanner.nextInt();
-        scanner.nextLine(); // Membersihkan newline dari buffer
 
         if (idResto < 1 || idResto > restaurant.size()) {
             System.out.println("ID restoran tidak valid.");
@@ -109,7 +113,8 @@ public class admin {
         String namaResto = userInput.getString();
 
         System.out.println("MASUKKAN ALAMAT RESTORAN : ");
-        String alamat = scanner.nextLine();
+        String alamat = userInput.getString();
+
         Restoran restoran = new Restoran(namaResto, alamat);
 
         do {
@@ -117,8 +122,7 @@ public class admin {
             System.out.println("2. minuman");
             System.out.println("0. kembali");
 
-            pilihan = scanner.nextInt();
-            scanner.nextLine();
+            pilihan = userInput.getInteger(0, 2);
 
             if (pilihan == 0) {
                 tambahRestoran();
@@ -126,10 +130,10 @@ public class admin {
             }
 
             System.out.println("masukkan nama menu");
-            String namaMenu = scanner.nextLine();
+            String namaMenu = userInput.getString();
 
             System.out.println("masukkan harga menu");
-            String hargaMenu = scanner.nextLine();
+            String hargaMenu = userInput.getString();
 
             switch (pilihan) {
                 case 1:
@@ -145,8 +149,7 @@ public class admin {
             }
 
             System.out.println("apakah anda ingin menambah lagi? 1 YA 0 TIDAK");
-            konfirm = scanner.nextInt();
-            scanner.nextLine();
+            konfirm = userInput.getInteger(0, 1);
 
         } while (konfirm != 0);
 
@@ -169,13 +172,13 @@ public class admin {
         }
 
         System.out.println("pilih yg mau di hapus");
-        int hapus = scanner.nextInt();
+        int hapus = userInput.getInteger(1, 2);
 
         System.out.printf("hapus : %s - %s",
                 getRestaurants().get(hapus - 1).getNamaResto(),
                 getRestaurants().get(hapus - 1).getAlamat());
         System.out.println("1 conf, 0 balik");
-        int konfirm = scanner.nextInt();
+        int konfirm = userInput.getInteger(0, 1);
         if (konfirm == 1) {
             hapusResto(hapus - 1);
             System.out.println("sudha terhapus");
