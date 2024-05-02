@@ -5,6 +5,7 @@ public class Restoran {
     private String alamat;
     private ArrayList<ArrayList<String>> makanan = new ArrayList<>();
     private ArrayList<ArrayList<String>> minuman = new ArrayList<>();
+    private int idRestoran;
 
     // constructor untuk tambah restoran
     public Restoran(String namaResto, String alamat) {
@@ -40,5 +41,13 @@ public class Restoran {
         minumanItem.add(namaMinuman);
         minumanItem.add(hargaMinuman);
         minuman.add(minumanItem);
+    }
+
+    public void setIdRestoran(int idRestoran) {
+        this.idRestoran = idRestoran;
+    }
+
+    public int getIdRestoran() {
+        return idRestoran;
     }
 }

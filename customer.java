@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class customer {
+    private static ArrayList<Pesanan> riwayatPesanan = new ArrayList<>();
 
     public static void menuCustomer(){
         System.out.println("[]===================================[]");
@@ -20,20 +21,18 @@ public class customer {
         switch (choice) {
             case 1:
                 systemCLS.clearScreen();
-                System.out.println("Daftar nama Restaurant");
                 lihatRestoran();
                 break;
 
             case 2:
                 systemCLS.clearScreen();
-                System.out.println("Pesan Makanan");
                 ArrayList<Restoran> restaurants = admin.getRestaurants();
                 orderFood(restaurants);
                 break;
             
             case 3:
                 systemCLS.clearScreen();
-                System.out.println("Riwayat Pemesanan");
+                riwayatPemesanan();
                 break;
             
             case 4:
@@ -48,15 +47,23 @@ public class customer {
     }
 
     public static void orderFood(ArrayList<Restoran> restaurants) {
+        ArrayList<ItemPesanan> makananPesanan = new ArrayList<>();
+        ArrayList<ItemPesanan> minumanPesanan = new ArrayList<>();
+        ArrayList<Restoran> daftarRestoran = admin.getRestaurants();
+
         Scanner scanner = new Scanner(System.in);
         boolean pesanLagi = true;
+        int totalHarga = 0;
+        int jumlahPesan = 0;
+
+        ArrayList<String> food = null;
+        ArrayList<String> drink = null;
 
         // Menampilkan daftar restoran
         System.out.println("Daftar Restoran:");
-        int id = 1;
-        for (Restoran restoran : restaurants) {
-            System.out.printf("%d. %s-%s\n", id, restoran.getNamaResto(), restoran.getAlamat());
-            id++;
+        for (int i = 0; i < restaurants.size(); i++) {
+            Restoran restoran = restaurants.get(i);
+            System.out.printf("%d. %s-%s\n", i + 1, restoran.getNamaResto(), restoran.getAlamat());
         }
 
         // Memilih restoran
@@ -71,22 +78,21 @@ public class customer {
 
         Restoran restoranPilihan = restaurants.get(restoranIndex - 1);
 
-        int totalHarga = 0;
         while (pesanLagi) {
             // Menampilkan menu restoran yang dipilih
             System.out.println("Menu " + restoranPilihan.getNamaResto() + ":");
             System.out.println("Menu Makanan:");
             ArrayList<ArrayList<String>> makanan = restoranPilihan.getMakanan();
             for (int i = 0; i < makanan.size(); i++) {
-                ArrayList<String> food = makanan.get(i);
+                food = makanan.get(i);
                 System.out.printf("%d. %s - Rp. %s\n", i + 1, food.get(0), food.get(1));
             }
 
-            // Menampilkan menu minuman
+            // Memilih menu minuman
             System.out.println("Menu Minuman:");
             ArrayList<ArrayList<String>> minuman = restoranPilihan.getMinuman();
             for (int i = 0; i < minuman.size(); i++) {
-                ArrayList<String> drink = minuman.get(i);
+                drink = minuman.get(i);
                 System.out.printf("%d. %s - Rp. %s\n", i + 1, drink.get(0), drink.get(1));
             }
 
@@ -107,8 +113,10 @@ public class customer {
             ArrayList<ArrayList<String>> pesanan;
             if (jenisPesan.equalsIgnoreCase("makanan")) {
                 pesanan = makanan;
+                makananPesanan.add(new ItemPesanan(food.get(0), Integer.parseInt(food.get(1)), jumlahPesan));
             } else {
                 pesanan = minuman;
+                minumanPesanan.add(new ItemPesanan(drink.get(0), Integer.parseInt(drink.get(1)), jumlahPesan));
             }
 
             if (menuIndex < 1 || menuIndex > pesanan.size()) {
@@ -121,7 +129,7 @@ public class customer {
 
             // Memilih jumlah pesanan
             System.out.print("Masukkan jumlah " + jenisPesan + " yang ingin dipesan: ");
-            int jumlahPesan = scanner.nextInt();
+            jumlahPesan = scanner.nextInt();
             scanner.nextLine(); // Membuang newline character
 
             // Menampilkan rincian pesanan
@@ -131,31 +139,40 @@ public class customer {
             System.out.println("Harga: Rp. " + pesanan.get(indexMenu).get(1));
             System.out.println("Jumlah: " + jumlahPesan);
 
-            // int hargaFood = jumlahPesan * Integer.valueOf(pesanan.get(indexMenu).get(1));
-            totalHarga = totalHarga + (jumlahPesan * Integer.valueOf(pesanan.get(indexMenu).get(1)));
+            // Menghitung total harga pesanan
+            totalHarga += (jumlahPesan * Integer.parseInt(pesanan.get(indexMenu).get(1)));
 
             // Meminta input untuk pesan lagi
             System.out.print("Apakah ingin memesan lagi? (ya/tidak): ");
             String input = scanner.nextLine();
 
-            if (input.equalsIgnoreCase("ya")) {
-                pesanLagi = true;
-            } else {
+            if (!input.equalsIgnoreCase("ya")) {
                 pesanLagi = false;
             }
-
         }
-        
-        System.out.println("Total Harga: Rp. "+ totalHarga);
-        // ArrayList<ArrayList<String>> pesanan = restoranPilihan.getMakanan();
-        // for (ArrayList<String> menu : pesanan) {
-        //     totalHarga += Integer.parseInt(menu.get(1)); // Harga makanan
-        // }
-        // // Hitung total harga pesanan
-        // System.out.println("Total Harga: Rp. " + totalHarga);
-    }
 
-    
+        // Meminta input jarak rumah dan menghitung harga ongkir
+        System.out.print("Masukkan jarak rumah anda (KM): ");
+        int jarakRumah = scanner.nextInt();
+        int hargaOngkir = jarakRumah * 1850;
+        scanner.nextLine();
+
+        // Menampilkan total harga makanan dan ongkir
+        System.out.println("Total Harga Makanan: Rp. " + totalHarga);
+        System.out.println("Harga Ongkir: Rp. " + hargaOngkir);
+        
+        // Menampilkan total harga keseluruhan
+        int totalHargaKeseluruhan = totalHarga + hargaOngkir;
+        System.out.println("Total Harga: Rp. " + totalHargaKeseluruhan);
+
+        Pesanan pesananBaru = new Pesanan(restoranIndex, makananPesanan, minumanPesanan, jarakRumah, totalHargaKeseluruhan, daftarRestoran);
+        riwayatPesanan.add(pesananBaru);
+
+
+        waitForInput(scanner);
+        menuCustomer();
+        scanner.close();
+    }
 
     public static void lihatRestoran(){
         ArrayList<Restoran> restaurants = admin.getRestaurants();
@@ -190,6 +207,45 @@ public class customer {
         menuCustomer();
     }
 
+    public static void riwayatPemesanan() {
+        System.out.println("Riwayat Pemesanan:");
+    
+        if (riwayatPesanan.isEmpty()) {
+            System.out.println("Belum ada riwayat pemesanan.");
+        } else {
+            for (int i = 0; i < riwayatPesanan.size(); i++) {
+                Pesanan pesanan = riwayatPesanan.get(i);
+                System.out.println("Pesanan ke-" + (i + 1));
+                System.out.println("ID Restoran: " + pesanan.getIdRestoran());
+                // Tampilkan detail makanan
+                System.out.println("Makanan:");
+                for (ItemPesanan item : pesanan.getMakananPesanan()) {
+                    System.out.println("Nama Restoran: " + pesanan.getNamaRestoran(i)); // Tampilkan nama restoran
+                    System.out.println("Nama Item: " + item.getNama()); // Tampilkan nama item
+                    System.out.println("Jumlah Pesanan: " + item.getJumlah()); // Tampilkan jumlah pesanan
+                    System.out.println("Harga: " + item.getHarga()); // Tampilkan harga
+                    System.out.println(); // Pindah ke baris berikutnya
+                }
+                // Tampilkan detail minuman
+                System.out.println("Minuman:");
+                for (ItemPesanan item : pesanan.getMinumanPesanan()) {
+                    System.out.println("Nama Restoran: " + pesanan.getNamaRestoran(i)); // Tampilkan nama restoran
+                    System.out.println("Nama Item: " + item.getNama()); // Tampilkan nama item
+                    System.out.println("Jumlah Pesanan: " + item.getJumlah()); // Tampilkan jumlah pesanan
+                    System.out.println("Harga: " + item.getHarga()); // Tampilkan harga
+                    System.out.println(); // Pindah ke baris berikutnya
+                }
+                System.out.println("Jarak: " + pesanan.getJarak() + " KM");
+                System.out.println("Total Harga: Rp. " + pesanan.getTotalHarga());
+                System.out.println();
+            }
+        }
+    
+        waitForInput(new Scanner(System.in)); // Tunggu input sebelum kembali ke menu
+        menuCustomer(); // Kembali ke menu utama
+    }
+    
+    
     public static void waitForInput(Scanner scan) {
         System.out.println("Tekan tombol ENTER untuk lanjut");
         scan.nextLine();
