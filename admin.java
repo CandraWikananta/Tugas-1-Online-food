@@ -74,7 +74,7 @@ public class admin {
             id++;
         }
         System.out.println("");
-        System.out.println("Masukkan ID restoran : ");
+        System.out.println("Masukkan ID restoran (cont : 1) : ");
         int idResto = userInput.getIntegerbiasa();
 
         if (idResto < 1 || idResto > restaurant.size()) {
