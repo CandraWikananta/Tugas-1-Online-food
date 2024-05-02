@@ -6,7 +6,7 @@ public class ItemPesanan {
 
     // Konstruktor
     public ItemPesanan(String nama, int harga, int jumlah) {
-        this.idMenu = idMenu;
+        // this.idMenu = idMenu;
         this.nama = nama;
         this.harga = harga;
         this.jumlah = jumlah;

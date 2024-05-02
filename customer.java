@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class customer {
+    public static String usernameCustomer = "customer";
+    public static String passwordCustomer = "customer";
+
     private static ArrayList<Pesanan> riwayatPesanan = new ArrayList<>();
 
     public static void menuCustomer(){
@@ -20,23 +23,23 @@ public class customer {
 
         switch (choice) {
             case 1:
-                systemCLS.clearScreen();
+                App.clearScreen();
                 lihatRestoran();
                 break;
 
             case 2:
-                systemCLS.clearScreen();
+                App.clearScreen();
                 ArrayList<Restoran> restaurants = admin.getRestaurants();
                 orderFood(restaurants);
                 break;
             
             case 3:
-                systemCLS.clearScreen();
+                App.clearScreen();
                 riwayatPemesanan();
                 break;
             
             case 4:
-                Login.logIn();
+                App.logIn();
                 break;
         
             default:
@@ -217,10 +220,17 @@ public class customer {
                 Pesanan pesanan = riwayatPesanan.get(i);
                 System.out.println("Pesanan ke-" + (i + 1));
                 System.out.println("ID Restoran: " + pesanan.getIdRestoran());
+                
+                // Ambil objek Restoran terkait dari daftar restoran
+                ArrayList<Restoran> daftarRestoran = admin.getRestaurants();
+                Restoran restoran = daftarRestoran.get(pesanan.getIdRestoran() - 1); // -1 karena indeks dimulai dari 0
+    
+                // Tampilkan nama restoran
+                System.out.println("Nama Restoran: " + restoran.getNamaResto());
+    
                 // Tampilkan detail makanan
                 System.out.println("Makanan:");
                 for (ItemPesanan item : pesanan.getMakananPesanan()) {
-                    System.out.println("Nama Restoran: " + pesanan.getNamaRestoran(i)); // Tampilkan nama restoran
                     System.out.println("Nama Item: " + item.getNama()); // Tampilkan nama item
                     System.out.println("Jumlah Pesanan: " + item.getJumlah()); // Tampilkan jumlah pesanan
                     System.out.println("Harga: " + item.getHarga()); // Tampilkan harga
@@ -229,7 +239,6 @@ public class customer {
                 // Tampilkan detail minuman
                 System.out.println("Minuman:");
                 for (ItemPesanan item : pesanan.getMinumanPesanan()) {
-                    System.out.println("Nama Restoran: " + pesanan.getNamaRestoran(i)); // Tampilkan nama restoran
                     System.out.println("Nama Item: " + item.getNama()); // Tampilkan nama item
                     System.out.println("Jumlah Pesanan: " + item.getJumlah()); // Tampilkan jumlah pesanan
                     System.out.println("Harga: " + item.getHarga()); // Tampilkan harga
@@ -244,6 +253,7 @@ public class customer {
         waitForInput(new Scanner(System.in)); // Tunggu input sebelum kembali ke menu
         menuCustomer(); // Kembali ke menu utama
     }
+    
     
     
     public static void waitForInput(Scanner scan) {

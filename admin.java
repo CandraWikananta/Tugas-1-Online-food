@@ -1,6 +1,9 @@
 import java.util.*;
 
 public class admin {
+    public static String usernameAdmin = "admin";
+    public static String passwordAdmin = "admin";
+    
     public static Scanner scanner = new Scanner(System.in);
     public static ArrayList<Restoran> restaurant = new ArrayList<>();
 
@@ -29,7 +32,7 @@ public class admin {
         System.out.println("Masukkan pilihan : ");
         System.out.print("> ");
         int pilihanMenu = userInput.getInteger(1, 4);
-        systemCLS.clearScreen();
+        App.clearScreen();
 
         switch (pilihanMenu) {
             case 1:
@@ -49,7 +52,7 @@ public class admin {
                 System.out.println("[] Terimakasih Telah Menggunakan Program Kami[]");
                 System.out.println("[]===========================================[]");
                 userInput.hold();
-                Login.logIn();
+                App.logIn();
                 break;
         }
     }
@@ -114,10 +117,10 @@ public class admin {
         String alamat = userInput.getString();
 
         Restoran restoran = new Restoran(namaResto, alamat);
-        systemCLS.clearScreen();
+        App.clearScreen();
 
         do {
-            systemCLS.clearScreen();
+            App.clearScreen();
             System.out.println("[]===========================================[]");
             System.out.println("||    Pilih menu yang ingin ditambahkan!     ||");
             System.out.println("||                1. Makanan                 ||");
@@ -130,7 +133,7 @@ public class admin {
             pilihan = userInput.getInteger(0, 2);
 
             if (pilihan == 0) {
-                systemCLS.clearScreen();
+                App.clearScreen();
                 adminMenu();
                 return;
             }
@@ -164,7 +167,7 @@ public class admin {
 
         } while (konfirm != 0);
         tambahResto(restoran);
-        systemCLS.clearScreen();
+        App.clearScreen();
         System.out.println("Restoran berhasil ditambahkan!!");
         userInput.hold();
         adminMenu();
