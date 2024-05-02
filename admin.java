@@ -21,6 +21,14 @@ public class admin {
         restaurant.add(restaurants);
     }
 
+    public static ArrayList<Restoran> getRestaurants() {
+        return restaurant;
+    }
+
+    public static void hapusResto(int idResto) {
+        restaurant.remove(idResto);
+    }
+
     public static void adminMenu() {
         System.out.println(
                 "[]================================[]\n" +
@@ -160,11 +168,18 @@ public class admin {
     }
 
     private static void hapusRestoran() {
+        if (restaurant.size() == 0) {
+            System.out.println("Tidak ada restoran.");
+            adminMenu();
+            return; // Menghentikan eksekusi metode setelah menampilkan pesan
+        }
 
-    }
+        int id = 1;
+        for (Restoran restoran : restaurant) {
+            System.out.printf("%d. %s-%s\n", id, restoran.getNamaResto(), restoran.getAlamat());
+            id++;
+        }
 
-    public static ArrayList<Restoran> getRestaurants() {
-        return restaurant;
     }
 
 }
