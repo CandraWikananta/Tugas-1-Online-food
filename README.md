@@ -64,6 +64,18 @@ Jika pengguna memasukkan username dan password yang benar, maka pengguna akan di
 
 ![Menu utama](/gambar/menuUtamaAdm.jpg "Menu utama")
 
+2. **Lihat Restoran**
+
+![Lihat restoran](/gambar/lihatRestoOp.jpg "Lihat restoran")
+
+Jika pengguna memilih menu lihat restoran, maka tampilan menu pertama adalah list restoran yang sudah ditambahkan sebelumnya. Selanjutnya pengguna akan memilih ID restoran berapa yang ingin ditampilkan menunya.
+
+![List Menu](/gambar/lihatRestoAftInput.jpg "List menu")
+
+Setelah pengguna memilih ID Restoran, maka akan tampil list menu yang telah ditambahkan sebelumnya seperti pada contoh gambar di atas. Setelah selesai melihat, pengguna hanya cukup menekan enter untuk kembali ke halaman utama admin.
+
+Setelah pengguna mem
+
 ## Penutup
 
 Sekian program membeli makanan online berbasis command line dari kami. Mohon maaf apabila ada kesalahan yang terjadi dalam program
