@@ -9,7 +9,7 @@ public class userInput {
             try {
                 input = scan.nextInt();
                 scan.nextLine();
-                if (input <= min && input >= maks) {
+                if (input >= min && input <= maks) {
                     break;
                 } else {
                     System.out.println("Input salah, silahkan masukkan kembali");

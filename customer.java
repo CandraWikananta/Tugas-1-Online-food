@@ -7,11 +7,11 @@ public class customer {
         System.out.println("|| [1] Lihat Restaurant              ||");
         System.out.println("|| [2] Pesan Makanan                 ||");
         System.out.println("|| [3] Lihat Riwayat Pemesanan       ||");
-        System.out.println("|| [0] Log out                       ||");
+        System.out.println("|| [4] Log out                       ||");
         System.out.println("[]===================================[]");
         System.out.println("Masukkan Pilihan");
         System.out.print("> ");
-        int choice = userInput.getInteger(0, 3);
+        int choice = userInput.getInteger(1, 4);
 
         switch (choice) {
             case 1:
@@ -29,14 +29,19 @@ public class customer {
                 System.out.println("Riwayat Pemesanan");
                 break;
             
-            case 0:
+            case 4:
                 main.main(null);
                 break;
         
             default:
-            System.out.println("Pilighan anda salah!");
+            System.out.println("Pilihan anda salah!");
                 break;
         }
+
+    }
+
+    public static void orderFood(){
+        systemCLS.clearScreen();
 
     }
 }

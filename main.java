@@ -13,17 +13,20 @@ public class main {
         boolean isLoggedIn = false;
         while (!isLoggedIn) {
             systemCLS.clearScreen();
-            System.out.println("Selamat datang di Pemesanan makanan online!");
+            System.out.println("[] ================================================= []");
+            System.out.println("||    Selamat datang di Pemesanan makanan online!    ||");
+            System.out.println("[] ================================================= []");
+            System.out.println("\nSilahkan Login terlebih dahulu.");
             System.out.println("-------------------------------------------------");
-            System.out.println("Silahkan Login terlebih dahulu.");
             System.out.print("Username : ");
             String username = scan.nextLine();
             System.out.print("Password : ");
             String password = scan.nextLine();
 
             if (username.equals(usernameAdmin) && password.equals(passwordAdmin)) {
-                System.out.println("Berhasil Login sebagai Admin!");
-                isLoggedIn = true;
+                System.out.println("-------------------------------------------------");
+                System.out.println("      * * Berhasil Login sebagai Admin! * *      ");
+                System.out.println("-------------------------------------------------");                isLoggedIn = true;
                 waitForInput(scan);
                 systemCLS.clearScreen();
                 admin.adminMenu();
