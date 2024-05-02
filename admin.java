@@ -64,23 +64,43 @@ public class admin {
         int id = 1;
         for (int i = 0; i < restaurant.size(); i++) {
             Restoran restoran = restaurant.get(i);
-            System.out.printf("%d. %s - %s\n", i + 1, restoran.getNamaResto(), restoran.getAlamat());
-            id++;
+            System.out.printf("%d. %s - %s\n", id++, restoran.getNamaResto(), restoran.getAlamat());
         }
 
-        int idResto = 0;
-        System.out.println("masukkan id resto : ");
-        idResto = scanner.nextInt();
+        System.out.println("Masukkan id resto : ");
+        int idResto = scanner.nextInt();
+        scanner.nextLine(); // Membersihkan newline dari buffer
 
-        ArrayList<ArrayList<String>> makanan = new ArrayList<>();
-        ArrayList<ArrayList<String>> minuman = new ArrayList<>();
+        if (idResto < 1 || idResto > restaurant.size()) {
+            System.out.println("Id resto tidak valid.");
+            return;
+        }
 
-        makanan = restaurant.get(idResto - 1).getMakanan();
-        minuman = restaurant.get(idResto - 1).getMinuman();
-
-        System.out.printf("%s, %s", restaurant.get(idResto - 1).getNamaResto(),
+        System.out.printf("%s - %s\n", restaurant.get(idResto - 1).getNamaResto(),
                 restaurant.get(idResto - 1).getAlamat());
+        System.out.println("Menu makanan:");
 
+        ArrayList<ArrayList<String>> makanan = restaurant.get(idResto - 1).getMakanan();
+        if (makanan.size() == 0) {
+            System.out.println("Tidak ada makanan.");
+        } else {
+            int idMakanan = 1;
+            for (ArrayList<String> food : makanan) {
+                System.out.printf("%d. %s\t\tRp. %s\n", idMakanan++, food.get(0), food.get(1));
+            }
+        }
+
+        System.out.println("Menu minuman:");
+        ArrayList<ArrayList<String>> minuman = restaurant.get(idResto - 1).getMinuman();
+        if (minuman.size() == 0) {
+            System.out.println("Tidak ada minuman.");
+        } else {
+            int idMinuman = 1;
+            for (ArrayList<String> drink : minuman) {
+                System.out.printf("%d. %s\t\tRp. %s\n", idMinuman++, drink.get(0), drink.get(1));
+            }
+        }
+        adminMenu();
     }
 
     private static void tambahRestoran() {
