@@ -38,25 +38,19 @@ public class userInput {
         return input;
     }
 
-    public static double getDouble(double min, double maks) {
+    public static double getDouble() {
         double input;
         while (true) {
             try {
                 input = scan.nextDouble();
                 scan.nextLine();
-                if (input <= min && input >= maks) {
-                    break;
-                } else {
-                    System.out.println("Input salah, silahkan masukkan kembali");
-
-                }
+                return input; // Menambahkan pernyataan return untuk mengembalikan nilai input yang berhasil
 
             } catch (InputMismatchException d) {
                 System.out.println("Input salah, silahkan masukkan kembali");
                 scan.nextLine();
             }
         }
-        return input;
     }
 
 }
