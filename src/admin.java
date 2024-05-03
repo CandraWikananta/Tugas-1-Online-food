@@ -1,15 +1,17 @@
+package src;
+
 import java.util.*;
 
 public class admin {
-    public static String usernameAdmin = "admin";
-    public static String passwordAdmin = "admin";
-    private static ArrayList<Restoran> restaurant = new ArrayList<>();
+    public static String usernameAdmin = "src.admin";
+    public static String passwordAdmin = "src.admin";
+    private static ArrayList<src.Restoran> restaurant = new ArrayList<>();
 
-    public static void tambahResto(Restoran restaurants) {
+    public static void tambahResto(src.Restoran restaurants) {
         restaurant.add(restaurants);
     }
 
-    public static ArrayList<Restoran> getRestaurants() {
+    public static ArrayList<src.Restoran> getRestaurants() {
         return restaurant;
     }
 
@@ -28,8 +30,8 @@ public class admin {
                         "||4. Kembali ke login             ||\n" +
                         "[]================================[]\n");
         System.out.println("Masukkan pilihan : ");
-        int pilihanMenu = userInput.getInteger(1, 4);
-        App.clearScreen();
+        int pilihanMenu = src.userInput.getInteger(1, 4);
+        src.App.clearScreen();
 
         switch (pilihanMenu) {
             case 1:
@@ -48,17 +50,18 @@ public class admin {
                 System.out.println("[]===========================================[]");
                 System.out.println("[] Terimakasih Telah Menggunakan Program Kami[]");
                 System.out.println("[]===========================================[]");
-                userInput.hold();
-                App.logIn();
+                src.userInput.hold();
+                src.App.logIn();
                 break;
         }
     }
 
     private static void lihatRestoran() {
+        src.userInput userInput = new src.userInput();
         if (restaurant.size() == 0) {
             System.out.println("Tidak ada restoran, tambahkan restroan terlebih dahulu :)");
             userInput.hold();
-            App.clearScreen();
+            src.App.clearScreen();
             adminMenu();
             return;
         }
@@ -68,7 +71,7 @@ public class admin {
         System.out.println("[]===========================================[]");
         System.out.println("[]                LIST RESTORAN              []");
         System.out.println("[]===========================================[]");
-        for (Restoran restoran : restaurant) {
+        for (src.Restoran restoran : restaurant) {
             System.out.printf("%d. %s - %s\n", id, restoran.getNamaResto(), restoran.getAlamat());
             id++;
         }
@@ -79,14 +82,14 @@ public class admin {
         if (idResto < 1 || idResto > restaurant.size()) {
             System.out.println("ID restoran tidak valid.");
             userInput.hold();
-            App.clearScreen();
+            src.App.clearScreen();
             adminMenu();
             return;
         }
-        App.clearScreen();
-        Restoran restoranPilihan = restaurant.get(idResto - 1);
+        src.App.clearScreen();
+        src.Restoran restoranPilihan = restaurant.get(idResto - 1);
 
-        System.out.printf("Restoran : %s - %s\n", restoranPilihan.getNamaResto(), restoranPilihan.getAlamat());
+        System.out.printf("src.Restoran : %s - %s\n", restoranPilihan.getNamaResto(), restoranPilihan.getAlamat());
         System.out.println("Menu Makanan:");
 
         ArrayList<ArrayList<String>> makanan = restoranPilihan.getMakanan();
@@ -111,7 +114,7 @@ public class admin {
             }
         }
         userInput.hold();
-        App.clearScreen();
+        src.App.clearScreen();
         adminMenu();
     }
 
@@ -120,9 +123,10 @@ public class admin {
         int konfirm = 0;
         System.out.println("Masukkan nama restoran : ");
         System.out.println("(Ketik 0, jika ingin kembali)");
+        src.userInput userInput = new src.userInput();
         String namaResto = userInput.getString();
         if (namaResto.equals("0")) {
-            App.clearScreen();
+            src.App.clearScreen();
             adminMenu();
         }
 
@@ -130,15 +134,15 @@ public class admin {
         System.out.println("(Ketik 0, jika ingin kembali)");
         String alamat = userInput.getString();
         if (alamat.equals("0")) {
-            App.clearScreen();
+            src.App.clearScreen();
             adminMenu();
         }
 
-        Restoran restoran = new Restoran(namaResto, alamat);
-        App.clearScreen();
+        src.Restoran restoran = new src.Restoran(namaResto, alamat);
+        src.App.clearScreen();
 
         do {
-            App.clearScreen();
+            src.App.clearScreen();
             System.out.println("[]===========================================[]");
             System.out.println("||    Pilih menu yang ingin ditambahkan!     ||");
             System.out.println("||                1. Makanan                 ||");
@@ -148,7 +152,7 @@ public class admin {
             pilihan = userInput.getInteger(0, 2);
 
             if (pilihan == 0) {
-                App.clearScreen();
+                src.App.clearScreen();
                 adminMenu();
                 return;
             }
@@ -157,7 +161,7 @@ public class admin {
             String namaMenu = userInput.getString();
 
             System.out.println("Masukkan harga menu");
-            String hargaMenu = Double.toString(userInput.getDouble());
+            String hargaMenu = Integer.toString(userInput.getIntegerbiasa());
 
             switch (pilihan) {
                 case 1:
@@ -178,18 +182,19 @@ public class admin {
 
         } while (konfirm != 0);
         tambahResto(restoran);
-        App.clearScreen();
-        System.out.println("Restoran berhasil ditambahkan!!");
+        src.App.clearScreen();
+        System.out.println("src.Restoran berhasil ditambahkan!!");
         userInput.hold();
-        App.clearScreen();
+        src.App.clearScreen();
         adminMenu();
     }
 
     private static void hapusRestoran() {
+        src.userInput userInput = null;
         if (restaurant.size() == 0) {
             System.out.println("Tidak ada restoran yang bisa dihapus, tambahkan restoran terlebih dahulu :)");
             userInput.hold();
-            App.clearScreen();
+            src.App.clearScreen();
             adminMenu();
             return;
         }
@@ -199,15 +204,15 @@ public class admin {
         System.out.println("[]===========================================[]");
 
         int id = 1;
-        for (Restoran restoran : restaurant) {
+        for (src.Restoran restoran : restaurant) {
             System.out.printf("%d. %s - %s\n", id, restoran.getNamaResto(), restoran.getAlamat());
             id++;
         }
         System.out.println("");
-        System.out.println("Pilih ID Restoran yang ingin anda hapus (cont : 1)");
+        System.out.println("Pilih ID src.Restoran yang ingin anda hapus (cont : 1)");
         int hapus = userInput.getIntegerbiasa();
-        App.clearScreen();
-        System.out.printf("Restoran : t%s - %s",
+        src.App.clearScreen();
+        System.out.printf("src.Restoran : t%s - %s",
                 getRestaurants().get(hapus - 1).getNamaResto(),
                 getRestaurants().get(hapus - 1).getAlamat());
         System.out.println("");
@@ -219,13 +224,13 @@ public class admin {
 
         if (konfirm == 1) {
             hapusResto(hapus - 1);
-            App.clearScreen();
-            System.out.println("Restoran sudah dihapus!");
+            src.App.clearScreen();
+            System.out.println("src.Restoran sudah dihapus!");
             userInput.hold();
-            App.clearScreen();
+            src.App.clearScreen();
             adminMenu();
         } else {
-            App.clearScreen();
+            src.App.clearScreen();
             adminMenu();
         }
 

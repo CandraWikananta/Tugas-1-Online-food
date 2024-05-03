@@ -176,6 +176,13 @@ public class customer {
 
     public static void lihatRestoran(){
         ArrayList<Restoran> restaurants = admin.getRestaurants();
+        if (restaurants.isEmpty()) {
+            System.out.println("Belum ada restoran.");
+            userInput.hold();
+            menuCustomer();
+            return;
+        }
+        
         System.out.println("Daftar Restoran:");
         int id = 1;
         for (Restoran restoran : restaurants) {
