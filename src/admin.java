@@ -1,8 +1,8 @@
 import java.util.*;
 
 public class admin {
-    public static String usernameAdmin = "src.admin";
-    public static String passwordAdmin = "src.admin";
+    public static String usernameAdmin = "admin";
+    public static String passwordAdmin = "admin";
     private static ArrayList<Restoran> restaurant = new ArrayList<>();
 
     public static void tambahResto(Restoran restaurants) {
