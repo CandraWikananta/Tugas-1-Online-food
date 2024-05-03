@@ -3,10 +3,7 @@ import java.util.*;
 public class admin {
     public static String usernameAdmin = "admin";
     public static String passwordAdmin = "admin";
-
-    public static Scanner scanner = new Scanner(System.in);
-
-    public static ArrayList<Restoran> restaurant = new ArrayList<>();
+    private static ArrayList<Restoran> restaurant = new ArrayList<>();
 
     public static void tambahResto(Restoran restaurants) {
         restaurant.add(restaurants);
@@ -60,6 +57,8 @@ public class admin {
     private static void lihatRestoran() {
         if (restaurant.size() == 0) {
             System.out.println("Tidak ada restoran, tambahkan restroan terlebih dahulu :)");
+            userInput.hold();
+            App.clearScreen();
             adminMenu();
             return;
         }
@@ -120,10 +119,20 @@ public class admin {
         int pilihan = 0;
         int konfirm = 0;
         System.out.println("Masukkan nama restoran : ");
+        System.out.println("(Ketik 0, jika ingin kembali)");
         String namaResto = userInput.getString();
+        if (namaResto.equals("0")) {
+            App.clearScreen();
+            adminMenu();
+        }
 
         System.out.println("Masukkan alamat restoran : ");
+        System.out.println("(Ketik 0, jika ingin kembali)");
         String alamat = userInput.getString();
+        if (alamat.equals("0")) {
+            App.clearScreen();
+            adminMenu();
+        }
 
         Restoran restoran = new Restoran(namaResto, alamat);
         App.clearScreen();
@@ -148,7 +157,7 @@ public class admin {
             String namaMenu = userInput.getString();
 
             System.out.println("Masukkan harga menu");
-            String hargaMenu = userInput.getString();
+            String hargaMenu = Double.toString(userInput.getDouble());
 
             switch (pilihan) {
                 case 1:
@@ -191,14 +200,14 @@ public class admin {
 
         int id = 1;
         for (Restoran restoran : restaurant) {
-            System.out.printf("%d. %s-%s\n", id, restoran.getNamaResto(), restoran.getAlamat());
+            System.out.printf("%d. %s - %s\n", id, restoran.getNamaResto(), restoran.getAlamat());
             id++;
         }
         System.out.println("");
         System.out.println("Pilih ID Restoran yang ingin anda hapus (cont : 1)");
         int hapus = userInput.getIntegerbiasa();
         App.clearScreen();
-        System.out.printf("Restoran : \t\t%s - %s",
+        System.out.printf("Restoran : t%s - %s",
                 getRestaurants().get(hapus - 1).getNamaResto(),
                 getRestaurants().get(hapus - 1).getAlamat());
         System.out.println("");
