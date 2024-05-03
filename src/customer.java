@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class customer {
-    public static String usernameCustomer = "customer";
-    public static String passwordCustomer = "customer";
+    public static String usernameCustomer = "src.customer";
+    public static String passwordCustomer = "src.customer";
 
     private static ArrayList<Pesanan> riwayatPesanan = new ArrayList<>();
 
@@ -59,7 +59,7 @@ public class customer {
         ArrayList<String> drink = null;
 
         System.out.println("[]===================================[]");
-        System.out.println("||           Daftar Restoran         ||");
+        System.out.println("||           Daftar src.Restoran         ||");
         System.out.println("[]===================================[]\n");
         for (int i = 0; i < restaurants.size(); i++) {
             Restoran restoran = restaurants.get(i);
@@ -136,10 +136,10 @@ public class customer {
 
             App.clearScreen();
             System.out.println("[]====================================[]");
-            System.out.println("||            Pesanan Anda            ||");
+            System.out.println("||            src.Pesanan Anda            ||");
             System.out.println("[]====================================[]\n");
 
-            System.out.println("Restoran: " + restoranPilihan.getNamaResto());
+            System.out.println("src.Restoran: " + restoranPilihan.getNamaResto());
             System.out.println("------------------------------------");
             System.out.println("Menu: " + jenisPesan + " - " + pesanan.get(indexMenu).get(0));
             System.out.println("Harga: Rp. " + pesanan.get(indexMenu).get(1));
@@ -183,7 +183,7 @@ public class customer {
             return;
         }
         
-        System.out.println("Daftar Restoran:");
+        System.out.println("Daftar src.Restoran:");
         int id = 1;
         for (Restoran restoran : restaurants) {
             System.out.printf("%d. %s-%s\n", id, restoran.getNamaResto(), restoran.getAlamat());
@@ -225,23 +225,23 @@ public class customer {
             for (int i = 0; i < riwayatPesanan.size(); i++) {
                 Pesanan pesanan = riwayatPesanan.get(i);
                 System.out.println("----------------------------------------");
-                System.out.println("Pesanan ke-" + (i + 1));
+                System.out.println("src.Pesanan ke-" + (i + 1));
                 System.out.println("----------------------------------------");
                 int idRestoran = pesanan.getIdRestoran();
                 ArrayList<Restoran> daftarRestoran = pesanan.getDaftarRestoran();
     
                 if (idRestoran >= 1 && idRestoran <= daftarRestoran.size()) {
                     Restoran restoran = daftarRestoran.get(idRestoran - 1);
-                    System.out.println("ID Restoran: " + idRestoran);
-                    System.out.println("Nama Restoran: " + restoran.getNamaResto());
+                    System.out.println("ID src.Restoran: " + idRestoran);
+                    System.out.println("Nama src.Restoran: " + restoran.getNamaResto());
                 } else {
-                    System.out.println("ID Restoran tidak valid");
+                    System.out.println("ID src.Restoran tidak valid");
                 }
     
                 System.out.println("\nMakanan:");
                 for (ItemPesanan item : pesanan.getMakananPesanan()) {
                     System.out.println("Nama Item: " + item.getNama()); 
-                    System.out.println("Jumlah Pesanan: " + item.getJumlah()); 
+                    System.out.println("Jumlah src.Pesanan: " + item.getJumlah());
                     System.out.println("Harga: " + item.getHarga()); 
                     System.out.println(); 
                 }
@@ -249,7 +249,7 @@ public class customer {
                 System.out.println("Minuman:");
                 for (ItemPesanan item : pesanan.getMinumanPesanan()) {
                     System.out.println("Nama Item: " + item.getNama()); 
-                    System.out.println("Jumlah Pesanan: " + item.getJumlah()); 
+                    System.out.println("Jumlah src.Pesanan: " + item.getJumlah());
                     System.out.println("Harga: " + item.getHarga()); 
                     
                 }

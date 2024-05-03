@@ -36,7 +36,7 @@ Diagram UML adalah cara untuk memvisualisasikan sistem dan perangkat lunak mengg
 
 Adapun batasan program yang sudah kami buat, antara lain :
 
-- Program ini hanya melayani dua tipe pengguna, yaitu src.customer dan src.admin
+- Program ini hanya melayani dua tipe pengguna, yaitu customer dan admin
 - Username dan Password ditulis di dalam kode langsung
 - Hanya tersedia satu bahasa, yaitu bahasa Indonesia
 
@@ -60,15 +60,15 @@ Adapun alur dari program yang telah kami buat sebagai berikut :
 
 ![login](/gambar/login.jpg "login")
 
-Penggunaan program diawali dengan login pengguna. Terdapat dua jenis penggguna yaitu src.customer dan src.admin .Pengguna dapat login ke dalam program ini dengan username dan password yang telah kami set di dalam program ini. Berikut adalah username dan passowrd untuk masing - masing pengguna.
+Penggunaan program diawali dengan login pengguna. Terdapat dua jenis penggguna yaitu customer dan admin .Pengguna dapat login ke dalam program ini dengan username dan password yang telah kami set di dalam program ini. Berikut adalah username dan passowrd untuk masing - masing pengguna.
 
 **Customer**
-`Username   : src.customer`
-`Password   : src.customer`
+`Username   : customer`
+`Password   : customer`
 
 **Admin**
-`Username   : src.admin`
-`Password   : src.admin`
+`Username   : admin`
+`Password   : admin`
 
 ![loginSuccess](/gambar/loginSuccess.jpg "loginSuccess")
 
@@ -78,11 +78,11 @@ Jika pengguna memasukkan username dan password yang benar, maka pengguna akan di
 
 1. **Menu Utama**
 
-Setelah melakukan login dengan username dan password yang sesuai, maka pengguna akan diarahakan ke menu src.admin. Berikut adalah tampilan awal menu src.admin
+Setelah melakukan login dengan username dan password yang sesuai, maka pengguna akan diarahakan ke menu admin. Berikut adalah tampilan awal menu admin
 
 ![Menu utama](/gambar/menuUtamaAdm.jpg "Menu utama")
 
-2. **Lihat src.Restoran**
+2. **Lihat Restoran**
 
 ![Lihat restoran](/gambar/lihatRestoOp.jpg "Lihat restoran")
 
@@ -90,9 +90,9 @@ Jika pengguna memilih menu lihat restoran, maka tampilan menu pertama adalah lis
 
 ![List Menu](/gambar/lihatRestoAftInput.jpg "List menu")
 
-Setelah pengguna memilih ID src.Restoran, maka akan tampil list menu yang telah ditambahkan sebelumnya seperti pada contoh gambar di atas. Setelah selesai melihat, pengguna hanya cukup menekan enter untuk kembali ke halaman utama src.admin.
+Setelah pengguna memilih ID Restoran, maka akan tampil list menu yang telah ditambahkan sebelumnya seperti pada contoh gambar di atas. Setelah selesai melihat, pengguna hanya cukup menekan enter untuk kembali ke halaman utama admin.
 
-3. **Tambah src.Restoran**
+3. **Tambah Restoran**
 
 ![Tambah menu](/gambar/tambahRRestoOp.jpg "Tambah menu")
 
@@ -110,7 +110,7 @@ Setelah memilih ingin menambah menu makanan atau minuman, user akan diminta untu
 
 Jika user sudah tidak mau menambahkan menu, maka data restoran akan disimpan berserta data menu yang telah dimasukkan.
 
-3. **Hapus src.Restoran**
+3. **Hapus Restoran**
 
 ![hapusResto](/gambar/hapusRestoOp.jpg "Hapus resto")
 
@@ -118,11 +118,11 @@ Jika pengguna memilih menu hapus restoran, maka tampilan menu pertama adalah lis
 
 ![konfirmHapusResto](/gambar/hapusRestokonfirm.jpg "Konfirmasi hapus resto")
 
-Setelah memilih ID Resto berapa yang akan dihaps, akan tampil data restoran beserta pesan konfirmasi penghapusan. Jika kita melakukan penghapusan maka semua data restoran dengan ID src.Restoran yang kita pilih akan hilang datanya.
+Setelah memilih ID Resto berapa yang akan dihaps, akan tampil data restoran beserta pesan konfirmasi penghapusan. Jika kita melakukan penghapusan maka semua data restoran dengan ID Restoran yang kita pilih akan hilang datanya.
 
 ![selesaiHapusResto](/gambar/hapusRestoDone.jpg "Selesai hapus resto")
 
-Jika user memilih untuk mengonfirmasi penghapusan, maka restoran tersebut akan terhapus. Sedangkan jika user memilih batal, maka tampilan akan kembali ke menu awal src.admin.
+Jika user memilih untuk mengonfirmasi penghapusan, maka restoran tersebut akan terhapus. Sedangkan jika user memilih batal, maka tampilan akan kembali ke menu awal admin.
 
 4 **Kembali Ke Menu Login**
 
@@ -134,51 +134,51 @@ Jika user memilih menu 'kembali ke login', maka akan tampil pesan seperti gambar
 
 1. **Login Customer**
 
-Untuk Log in ke dalam menu src.customer, kita harus memasukkan username "src.customer" dan password "src.customer" di halaman log in terlebih dahulu.
+Untuk Log in ke dalam menu customer, kita harus memasukkan username "customer" dan password "customer" di halaman log in terlebih dahulu.
 
 ![LoginCustomer](/gambar/LoginCustomer.png "Login sebagai Customer")
 
 2. **Halaman Utama Customer**
 
-Setelah melakukan login dengan username dan password yang sesuai, maka pengguna akan diarahakan ke menu src.customer. Berikut adalah tampilan awal menu src.admin
+Setelah melakukan login dengan username dan password yang sesuai, maka pengguna akan diarahakan ke menu customer. Berikut adalah tampilan awal menu admin
 
-![menu src.customer](/gambar/menuCustomer.png "Menu Utama Customer")
+![menu customer](/gambar/menuCustomer.png "Menu Utama Customer")
 
-3. **Lihat src.Restoran**
+3. **Lihat Restoran**
 
-![Lihat src.Restoran](/gambar/lihatRestoranCust.png "Lihat src.Restoran")
+![Lihat Restoran](/gambar/lihatRestoranCust.png "Lihat Restoran")
 
 Jika pengguna memilih menu lihat restoran, maka tampilan menu pertama adalah list restoran yang sudah ditambahkan sebelumnya. Selanjutnya pengguna akan memilih ID restoran berapa yang ingin ditampilkan menunya.
 
-![Lihat Menu Resto](/gambar/menuRestoranCust.png "Menu src.Restoran")
+![Lihat Menu Resto](/gambar/menuRestoranCust.png "Menu Restoran")
 
-Setelah pengguna memilih ID src.Restoran, maka akan tampil list menu yang telah ditambahkan sebelumnya seperti pada contoh gambar di atas. Setelah selesai melihat, pengguna hanya cukup menekan enter untuk kembali ke halaman utama src.admin.
+Setelah pengguna memilih ID Restoran, maka akan tampil list menu yang telah ditambahkan sebelumnya seperti pada contoh gambar di atas. Setelah selesai melihat, pengguna hanya cukup menekan enter untuk kembali ke halaman utama admin.
 
-4. **Melakukan src.Pesanan**
+4. **Melakukan Pesanan**
 
 Jika pengguna memilih untuk melakukan pesanan, maka akan ditampilkan menu daftar restoran terlebih dahulu, kemudian pengguna dapat memilih dari restoran mana yang mau dipesan.
 
-![Daftar src.Restoran](/gambar/daftarRestoranCust.png "Daftar src.Restoran")
+![Daftar Restoran](/gambar/daftarRestoranCust.png "Daftar Restoran")
 
 Setelah pengguna memilih restoran, akan ditampilkan list menu yang ada di dalam restoran tersebut seperti gambar di bawah ini.
 
-![Menu Resto](/gambar/melakukanPesanan.png "Melakukan src.Pesanan")
+![Menu Resto](/gambar/melakukanPesanan.png "Melakukan Pesanan")
 
 Kemudian pengguna dapat memilih diantara makanan/minuman yang mau dipesan. lalu pengguna harus memasukkan nomor makanan/minuman yang mau dipesan dan jumlah nya berapa.
 
-![src.Pesanan](/gambar/melakukanPesanan2.png "Menambah src.Pesanan")
+![Pesanan](/gambar/melakukanPesanan2.png "Menambah Pesanan")
 
 Setelah itu pengguna akan ditanyakan jika ingin melakukan pesanan lagi atau tidak, jika iya pengguna akan diminta untuk memilih nomor makanan/minuman lagi dan jumlahnya. Jika tidak maka akan ditanyakan jarak rumah dari Resto dan akan dihitung harga ongkir serta total harga pesanan.
 
-![Selesai src.Pesanan](/gambar/selesaiPesanan.png "Selesai src.Pesanan")
+![Selesai Pesanan](/gambar/selesaiPesanan.png "Selesai Pesanan")
 
 Pengguna cukup untuk menekankan tombol enter untuk lanjut setelah selesai melakukan pesanan.
 
-5. **Riwayat src.Pesanan**
+5. **Riwayat Pesanan**
 
 Ketika pengguna sudah selesai melakukan pemesanan, kita bisa melihat riwayat pemesanan yang telah pengguna lakukan. Berikut adalah tampilan menu dari riwayat pemesanan.
 
-![Riwayat src.Pesanan](/gambar/riwayatPesanan.png "Riwayat src.Pesanan")
+![Riwayat Pesanan](/gambar/riwayatPesanan.png "Riwayat Pesanan")
 
 ## Penutup
 
